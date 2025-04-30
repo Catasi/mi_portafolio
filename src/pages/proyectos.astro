@@ -2,10 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import { proyectos } from '../data/proyectos.js';
 import './src/styles/global.css' 
+import { IslaDinamicaDetallesP } from '../components/IslaDinamicaDetallesP.jsx';
 ---
 
 <Layout>
-    <p>Proyectos en los que he trabajado</p>
+    <p>Proyectos en los que he trabajado 🛠️</p>
     <div class="proyectos">
         {proyectos.map((proyecto) => (
             <div class="proyecto">
@@ -13,7 +14,8 @@ import './src/styles/global.css'
                 <div class="proyecto-info">
                     <h3>{proyecto.nombre}</h3>
                     <p>{proyecto.objetivo}</p>
-                    <button class="btn-ver-proyecto">Ver Más...</button>
+                    <button class="btn-ver-proyecto" onclick="verDetalles();">Ver Más...</button>
+                    {/* <IslaDinamicaDetallesP client:only="react" /> */}
                 </div>
             </div>
         ))}
@@ -61,6 +63,7 @@ import './src/styles/global.css'
         width: max-content;
         height: 200px;
         object-fit: cover;
+        border-radius: 20px;
     }
 
     .proyecto-info {

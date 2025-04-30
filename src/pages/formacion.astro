@@ -1,7 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { IslaDinamicaFormacion } from '../components/IslaDinamicaFormacion.jsx';
 ---
 
 <Layout>
-    <p>hola como estas</p>
+    <p>Esta es mi información de formación académica y profesional 🚀</p>
+
+    <IslaDinamicaFormacion client:only="react" />
+
 </Layout>
+

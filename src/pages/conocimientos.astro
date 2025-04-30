@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
     <section>
-        <h2>Conocimientos</h2>
+        <h2>Conocimientos 📚</h2>
         <ul>
             <li>Consumo y creación de RESTful APIs</li>
             <li>Diseño de bases de datos relacionales</li>
@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
             <li>Creación de aplicaciones IoT</li>
         </ul>
 
-        <h2>Habilidades</h2>
+        <h2>Habilidades 🧠</h2>
         <ul>
             <li>Resolución de problemas</li>
             <li>Aprendizaje continuo</li>
@@ -57,5 +57,11 @@ import Layout from '../layouts/Layout.astro';
         font-size: 1rem;
         color: #fff;
         margin-bottom: 0.5rem;
+        transform: translateX(-10px);
+        transition: duration 0.5s ease-in-out;
+    }
+
+    li:hover {
+        transform: translateX(0);
     }
 </style>

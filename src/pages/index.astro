@@ -1,30 +1,85 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { proyectos } from '../data/proyectos.js';
 ---
 
 <Layout>
-	<p>
-		⠀⠀⣿⠛⢳⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣔⢁⡁⡆⠀
-		⠀⢰⣽⡆⠀⠈⠎⣡⢆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⠑⡈⠃⣠⡿⡇⡇⠀
-		⠀⠸⣕⣿⣇⣀⡀⠉⠉⠻⠞⠜⠳⠘⡒⡒⡔⣦⡠⣄⣀⢔⠥⠅⠁⠀⣐⣿⣟⣻⡅⠀
-		⠀⠻⡓⣿⣻⣿⣇⢆⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠀⡀⠄⣮⣝⢏⡏⡃⠀
-		⠀⠨⢍⣬⡯⣟⢿⣿⡖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣥⣿⢻⢯⢿⠃⠅⠀
-		⠀⠀⢃⢕⣧⣗⡁⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠟⢛⢽⣿⡿⡅⠀⠀
-		⠀⠀⠀⢙⡷⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢸⣫⢉⠄⠀
-		⠀⠀⢀⡺⡇⠀⠀⣀⣂⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡀⡀⣀⠀⠀⠁⢯⡡⠅⠀
-		⠀⠀⡰⠇⡅⠀⠀⠈⠉⠻⠧⠗⠉⠀⠀⠀⠀⠀⠀⠛⠯⠻⠋⠁⠀⠀⠀⠐⢛⣿⠇⠀
-		⠐⠐⡋⠄⢁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣹⡻⡕⠂
-		⠠⢀⡶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣽⣄⣔⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣻⠪⡀
-		⠀⠀⡽⣶⡆⠅⠄⠀⠀⠀⠀⠀⠀⠀⢹⣏⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⡰⢢⢟⡿⡻⠀
-		⠀⠀⠀⠐⠁⢝⢄⡀⠀⠀⠀⠀⠀⠀⣠⣏⡀⠀⠀⠀⠀⠀⠀⠀⢀⠀⢀⣾⠧⠉⠀⠀
-		⠀⠀⠀⠂⠈⡢⠗⣿⡆⣦⢀⣀⣔⡮⠘⠑⠻⢷⣶⣆⣀⢀⢃⡤⡦⡿⡎⠚⠁⠀⠀⠀
-		⠀⠀⠀⠀⠀⠁⠀⠀⠈⡷⣌⣠⡀⡀⠀⠀⠀⢀⢌⡏⢓⠫⠫⠁⠁⠄⠁⠈⠀⠀⠀⠀
-		⠀⠀⠀⠀⠀⠀⠀⠀⠂⠒⠂⠉⠑⠪⠣⠇⠏⠛⠉⠈⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀
-	</p>
-	<p>Estudiante de Desarrollo de Software Multiplataforma en la Universidad Tecnológica de León</p>
-
-	--- PENDIENTE ---
+	<p>Proyectos en los que he trabajado 🛠️</p>
+    <div class="proyectos">
+        {proyectos.map((proyecto) => (
+            <div class="proyecto">
+                <img src={proyecto.img} alt={proyecto.nombre} class="proyecto-img">
+                <div class="proyecto-info">
+                    <h3>{proyecto.nombre}</h3>
+                    <p>{proyecto.objetivo}</p>
+                    <button class="btn-ver-proyecto">Ver Más...</button>
+                </div>
+            </div>
+        ))}
+    </div>
 </Layout>
+
+<style>
+    button {
+        background-color: #db750e;
+        color: #fff;
+        align-self: center;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+    }
+    
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .proyectos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .proyecto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    .proyecto-img {
+        width: max-content;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .proyecto-info {
+        padding: 30px;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 10px;
+    }
+
+    .proyecto-info h3 {
+        color: #db750e;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .proyecto-info p {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin: 0;
+        font-size: 16px;
+    }    
+</style>
