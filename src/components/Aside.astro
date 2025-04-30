@@ -1,0 +1,98 @@
+---
+import { datosAside } from '../data/datosAside.js';
+---
+
+<aside>
+    <h1>CATASI</h1>
+    <img src="/src/img/katia.jpg" alt="Gato_negro" class="img-fluid">
+    <h3>Desarrollador Web</h3>
+    <div class="contenedor-informacion">
+      {datosAside.map((dato) => (  
+        <div class="informacion flex flex-row items-center gap-x-4 mt-4">
+            <img src={dato.icono} alt={dato.icono} class="w-12 h-12 rounded-full object-cover">
+            <div class="flex flex-col">
+                <strong class="info">{dato.info}</strong>
+                <span class="descripcion">{dato.descripcion}</span>
+            </div>
+          </div>
+        ))}
+    </div>
+    <button>
+      <a href="src/assets/CV_AideéCasillas.pdf" download="CV_AideéCasillas.pdf">
+        Descargar mi CV
+      </a>
+    </button>
+</aside>
+
+<style>
+:root {
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 90%;
+}
+
+button {
+    background-color: #db750e;
+    color: #fff;
+    align-self: center;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.contenedor-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.informacion {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.informacion img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-start; 
+}
+
+</style>

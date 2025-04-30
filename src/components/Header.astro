@@ -1,0 +1,61 @@
+
+<header>
+    <a href="/" class="logo">
+        <img src="/src/img/perfil.jpeg" alt="Gato_negro" class="img-fluid">
+    </a>
+    <nav class="nav-links">
+        <a href="/">Sobre mí</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/conocimientos">Conocimientos</a>
+        <a href="/herramientas">Herramientas</a>
+        <a href="/formacion">Formación</a>
+    </nav>
+</header>
+
+<style>
+:root {
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #2e2b2b;
+  color: #fff;
+  font-family: var(--font-mono);
+  border-radius: 10px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.0);
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.nav-links a:hover {
+  color: #D95E1C;
+}
+@media (max-width: 768px) {
+    .nav-links{
+        display: none;
+        transition: all 0.3s ease;
+    }
+    
+}
+</style>
