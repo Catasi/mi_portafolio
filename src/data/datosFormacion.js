@@ -1,4 +1,4 @@
-export const ruta = "../src/img/";
+const ruta = "/img/";
 export const datosFormacion = [
     {
         titulo: "Educación",

@@ -1,4 +1,4 @@
-export const ruta = "../src/img/herramientas/";
+export const ruta = "/img/herramientas/";
 export const herramientas = [
     {
         titulo: "Sistemas Operativos 🖥️",

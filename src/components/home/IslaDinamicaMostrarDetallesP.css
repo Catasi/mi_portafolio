@@ -1,0 +1,143 @@
+.btn-ver-proyecto {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 90%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #db750e;
+    color: #fff;
+    align-self: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.btn-ver-proyecto:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.proyecto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  transition: all 1.2s ease;
+}
+
+.proyecto.expandido {
+  flex-direction: row;
+  width: 100%;
+}
+
+.proyecto-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: none;
+}
+
+.detalles-desplegable {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  animation: slideIn 1.5s ease forwards;
+  transform: translateX(0%);
+  overflow-y: scroll;
+}
+.detalles-desplegable::-webkit-scrollbar {
+  width: 5px;
+  }
+  
+  /* Track */
+  .detalles-desplegable::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .detalles-desplegable::-webkit-scrollbar-thumb {
+  background: #888;
+  }
+  
+  /* Handle on hover */
+  .detalles-desplegable::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  }
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.proyecto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.proyecto-info,
+.proyecto-img {
+    transition: opacity 0.3s ease;
+}
+
+.proyecto-img {
+    width: max-content;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.proyecto-info {
+    padding: 30px;
+    padding-bottom: 70px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 10px;
+}
+
+.proyecto-info h3 {
+    color: #db750e;
+    margin: 0;
+    font-size: 20px;
+}
+
+.proyecto-info p {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin: 0;
+    font-size: 16px;
+}  
+
+.proyecto:hover .proyecto-info,
+.proyecto:hover .proyecto-img {
+    opacity: 0.3;
+} 
+.proyecto:hover, .btn-ver-proyecto {
+    opacity: 1;
+    pointer-events: auto;
+}

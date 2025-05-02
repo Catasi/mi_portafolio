@@ -2,49 +2,69 @@
 import { proyectos } from '../data/proyectos.js';
 ---
 
-<div class="detalles-proyecto">+
-    
-
+<div class="detalles-proyecto">
+        {proyectos.map((proyecto, index) => (
+            <div class="detalles-proyecto-info">
+                <h4>Herramientas</h3>
+                <div class="herramientas">
+                    {proyecto.herramientas.map((herramienta) => (
+                    <div class="herramienta">
+                        <img src={herramienta.img} alt={herramienta.herramienta}>
+                        <p>{herramienta.herramienta}</p>
+                    </div>
+                ))}
+                </div>
+                <h4>Resultado</h3>
+                <p>{proyecto.resultado}</p>
+            </div>
+        ))}
+    </div>
 </div>
 
 <style>
-    .detalles-proyecto {
+    h4 {
+        color: #db750e;
+        font-size: 1.25rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid #db750e;
+        padding-bottom: 0.25rem;
+    }
+
+    .herramientas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: flex-start;
+    }
+    .herramienta {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 400px;
+        width: 80px;
         height: auto;
+        padding: 0.5rem;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
+        background-color: #333;
+        transition-duration: 0.3s;
     }
 
-    .detalles-proyecto-img {
-        width: max-content;
-        height: 200px;
+    .herramienta:hover {
+        transform: translateY(-10px);
+    }
+
+    .herramienta img{
+        width: 100%;
+        height: auto;
         object-fit: cover;
-        border-radius: 20px;
     }
 
-    .detalles-proyecto-info {
-        padding: 30px;
-        text-align: justify;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        gap: 10px;
-    }
-
-    .detalles-proyecto-info h3 {
-        color: #db750e;
+    .herramienta p {
+        padding: 5px 0;
         margin: 0;
-        font-size: 20px;
-    }
-
-    .detalles-proyecto-info p {
-        padding-bottom: 15px;
-        padding-top: 15px;
-        margin: 0;
-        font-size: 16px;
-    }    
+        font-size: 12px;
+        color: #ffffff;
+        text-align: center;
+    }     
 </style>
