@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { IslaDinamicaDetallesP } from './IslaDinamicaDetallesP.jsx';
 import './IslaDinamicaMostrarDetallesP.css';

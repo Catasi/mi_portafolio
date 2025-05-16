@@ -1,8 +1,9 @@
+
 import {useState, useRef} from "react"
-import { datosFormacion } from '../../data/datosFormacion.js';
+import { getDatosFormacion } from '../../data/getData.js';
 import './IslaDinamicaFormacion.css';
 
-export function IslaDinamicaFormacion() {
+export function IslaDinamicaFormacion({currentLanguage}) {
 	//toma el Index como constante -- null
   const [activeIndex, setActiveIndex] = useState(null);
   const contentRefs = useRef([]);
@@ -10,6 +11,8 @@ export function IslaDinamicaFormacion() {
   const toggle = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
+
+  const datosFormacion = getDatosFormacion(currentLanguage);
 
   return (
     <div>

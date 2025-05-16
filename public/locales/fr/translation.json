@@ -1,0 +1,48 @@
+{
+    "site": {
+        "title": "Portfolio de Catasi",
+        "description": "C'est mon portfolio professionnel :D"
+    },
+    "header": {
+        "nav1": "Accueil",
+        "nav2": "Connaissances",
+        "nav3": "Outils",
+        "nav4": "Formation"
+    },
+    "footer": {
+        "copyright": "© 2025 Catasi's Portafolio. Tous droits réservés."
+    },
+    "aside": {
+        "h3": "Développeusse Web  👨‍💻",
+        "description": "Étudiant en développement de logiciels multiplateformes",
+        "buttonCV": "Télécharger mon CV"
+    },
+    "titles": {
+        "proyects": "Projets sur lesquels j'ai travaillé 🛠️",
+        "tools": "Outils que j'ai utilisés dans le développement de mes projets 🔧",
+        "formation": "Voici mes informations sur la formation scolaire et professionnelle 🚀"
+    },
+    "knowledges": {
+        "title" : "Connaissances 📚",
+        "l1" : "Consommation et création d'API RESTful",
+        "l2" : "Conception de bases de données relationnelles",
+        "l3" : "Algorithmes et structures de données",
+        "l4" : "Utilisation de GitHub",
+        "l5" : "Tests unitaires",
+        "l6" : "Code propre et normalisé",
+        "l7" : "Infrastructure de base",
+        "l8" : "Méthodologies de projet traditionelles et agiles",
+        "l9" : "Création d'applications IoT"
+    },
+    "skills" : {
+        "title" : "Compétences 🧠",
+        "l1" : "Résolution de problèmes",
+        "l2" : "Apprentissage continu",
+        "l3" : "Adaptabilité",
+        "l4" : "Organisation et gestion du temps",
+        "l5" : "Travail d'équipe",
+        "l6" : "Planification",
+        "l7" : "Communication",
+        "l8" : "Leadership"
+    }
+}

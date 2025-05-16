@@ -1,0 +1,48 @@
+{
+    "site": {
+        "title": "Catasi's Portfolio",
+        "description": "This is my professional portfolio :D"
+    },
+    "header": {
+        "nav1": "Home",
+        "nav2": "Knowledge",
+        "nav3": "Tools",
+        "nav4": "Training"
+    },
+    "footer": {
+        "copyright": "© 2025 Catasi's Portfolio. All rights reserved."
+    },
+    "aside": {
+        "h3": "Web Developer 👨‍💻",
+        "description": "Student of Multi-platform Software Development",
+        "buttonCV": "Dowload my CV"
+    },
+    "titles": {
+        "proyects": "Projects I have worked on 🛠️",
+        "tools": "Tools I have used in my projects development 🔧",
+        "formation": "This is my academic and vocational training information 🚀"
+    },
+    "knowledges": {
+        "title": "Knowledges 📚",
+        "l1": "APIs and RESTful consumption",
+        "l2": "Relational database design",
+        "l3": "Data structures and algorithms",
+        "l4": "GitHub usage",
+        "l5": "Unitary tests",
+        "l6": "Estandarized and clean code",
+        "l7": "Basic infrastructure",
+        "l8": "Traditional and agile project methodologies",
+        "l9": "Iot applications creation"
+    },
+    "skills": {
+        "title": "Skills 🧠",
+        "l1": "Problem solving",
+        "l2": "Continuous learning",
+        "l3": "Adaptability",
+        "l4": "Time management",
+        "l5": "Work in team skills",
+        "l6": "Planing",
+        "l7": "Communication",
+        "l8": "Lidership"
+    }
+}

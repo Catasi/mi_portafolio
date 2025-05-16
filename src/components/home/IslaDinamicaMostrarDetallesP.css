@@ -141,3 +141,9 @@
     opacity: 1;
     pointer-events: auto;
 }
+
+@media (max-width: 768px) {
+  .proyecto {
+      width: auto;
+  }
+}

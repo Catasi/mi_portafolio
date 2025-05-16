@@ -2,16 +2,17 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Aside from '../components/Aside.astro';
+import {t} from 'i18next';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Catasi's Portafolio</title>
+		<link rel="icon" type="image/svg+xml" href="/icon-galaxy.png" />
+		<meta name="description" content={t("site.description")} />
+		<title>{t("site.title")}</title>
 	</head>
 	<body>
 		<Header />
@@ -19,12 +20,10 @@ import Aside from '../components/Aside.astro';
 			<aside>
 				<Aside />
 			</aside>
-			<seccion>
-				<div class="container">
-					<h2>Aideé Casillas</h2>
-					<slot />
-				</div>
-			</seccion>	
+			<section>
+				<h2>Aideé Casillas</h2>
+				<slot />
+			</section>	
 		</main>
 		<Footer />
 	</body>
@@ -32,6 +31,7 @@ import Aside from '../components/Aside.astro';
 
 
 <style>
+
 	:root {
   		--font-mono: "IBM Plex Mono", ui-monospace, monospace;
 	}
@@ -45,36 +45,63 @@ import Aside from '../components/Aside.astro';
 		background-repeat: no-repeat;
 		font-family: var(--font-mono);
 	}
-  aside, .container {
-    background-color: #2e2b2b;
-    color: #fff;
-    padding: 20px;
-	border-radius: 10px;
-  }
-
-  aside {
-	align-content: flex-start;
-	width: 300px;
-  }
-
-  .container {
-	width: 938px; /*¿como se hace para que el contenido se ajuste al ancho de la ventana?*/
-  }
-
-  main {
-	padding: 20px 0 20px 0;
-    display: flex;
-	gap: 16px;
-  }
-
-  @media (max-width: 768px) {
-    main{
-        display: grid;
-    }
+	aside, section {
+		background-color: #2e2b2b;
+		color: #fff;
+		padding: 20px;
+		border-radius: 10px;
 	}
-	@media (max-width: 425px) {
-    main{
-        display: grid;
-    }
+
+	aside {
+		align-content: flex-start;
+		width: 300px;
+		max-width: 100%;
+	}
+
+	section {
+		flex: 1;
+		min-width: 0;
+	}
+
+	main {
+		padding: 20px 0 20px 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	@media (max-width: 1023px) {
+		main{
+			display: grid;
+		}
+
+		aside {
+			width: auto;
+		}
+
+	}
+
+	@media (max-width: 768px) {
+		body {
+			margin: 0;
+			padding: 10px 50px 0 50px;
+		}
+	}
+
+	@media (max-width: 426px) {
+		body {
+			margin: 0;
+			padding: 10px 20px 0 20px;
+		}
+	}
+
+	@media (max-width: 320px) {
+		aside, section {
+			padding: 0;
+		}
+
+		h2 {
+			text-align: center;
+		}
 	}
 </style>
