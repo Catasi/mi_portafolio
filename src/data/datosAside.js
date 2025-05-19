@@ -10,7 +10,7 @@ export const datosAside = [
     info_es: "Correo",
     info_en: "Email",
     info_fr: "Email",
-    descripcion: "Aideee.casillas@Igeco.com",
+    descripcion: "aideecasillas14@gmail.com",
     icono: "/img/arroba.png",
   },
   {

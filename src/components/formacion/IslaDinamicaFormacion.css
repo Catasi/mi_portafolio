@@ -100,7 +100,7 @@
       gap: 10px;
   }
 
-  h3 {
+ section h3 {
       color: #db750e;
       margin: 0;
       font-size: 20px;
@@ -121,4 +121,20 @@
 
   li {
     margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .educacion {
+      flex-direction: column;
+    }
+    
+    .item {
+      padding: 0.5rem;
+    }
+  }
+
+  @media (max-width: 426px) {
+    .item {
+      width: min-content;
+    }
   }

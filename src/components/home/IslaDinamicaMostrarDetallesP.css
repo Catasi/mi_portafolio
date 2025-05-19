@@ -142,6 +142,16 @@
     pointer-events: auto;
 }
 
+@media (max-width: 1025px) {
+  .proyecto.expandido {
+      flex-direction: column;
+  }
+
+  .btn-ver-proyecto {
+    left: 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .proyecto {
       width: auto;

@@ -14,10 +14,10 @@ export function TarjetaProyecto({ proyecto }) {
               <h3>{proyecto.nombre}</h3>
               <p>{proyecto.objetivo}</p>
           </div>
+          <button className="btn-ver-proyecto" onClick={() => setMostrarDetalles(!mostrarDetalles)}>
+              {mostrarDetalles ? 'Cerrar' : 'Ver Más...'}
+          </button>
         </div>
-        <button className="btn-ver-proyecto" onClick={() => setMostrarDetalles(!mostrarDetalles)}>
-            {mostrarDetalles ? 'Cerrar' : 'Ver Más...'}
-        </button>
         {mostrarDetalles && (
           <div className="detalles-desplegable">
             <IslaDinamicaDetallesP proyecto={proyecto} />
