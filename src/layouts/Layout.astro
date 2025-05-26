@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Aside from '../components/Aside.astro';
+import "../styles/global.css";
 import {t} from 'i18next';
 ---
 
@@ -17,11 +18,11 @@ import {t} from 'i18next';
 	<body>
 		<Header />
 		<main>
-			<aside>
+			<aside class="sticky top-23">
 				<Aside />
 			</aside>
 			<section>
-				<h2>Aideé Casillas</h2>
+				<h1 class="text-2xl text-center">Aideé Casillas</h1>
 				<slot />
 			</section>	
 		</main>
@@ -38,7 +39,6 @@ import {t} from 'i18next';
 	body {
 		color: white;
 		margin: 0;
-		padding: 10px 100px 0 100px;
 		background-image: url("/img/fondo.jpeg");
 		background-size: cover;
 		background-position: center;
@@ -56,6 +56,7 @@ import {t} from 'i18next';
 		align-content: flex-start;
 		width: 300px;
 		max-width: 100%;
+		height: max-content;
 	}
 
 	section {
@@ -64,11 +65,13 @@ import {t} from 'i18next';
 	}
 
 	main {
-		padding: 20px 0 20px 0;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 16px;
+		padding: 20px 100px 20px 100px;
 	}
+
+	body { --scrollbar-width: 5px; --scrollbar-height: 10px; --scrollbar-border-radius: 4px; --scrollbar-border-thickness: 0px; --show-double-buttons: none; --scrollbar-thumb-color: #DB750E; } body::-webkit-scrollbar-button { background: var(--scrollbar-button-color, #3F3F46); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar { width: var(--scrollbar-width, 20px); height: var(--scrollbar-height, 20px); }body::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-color, #3B82F6); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-track { background: var(--scrollbar-track-color, #A1A1AA); }body::-webkit-scrollbar-corner { background: var(--scrollbar-corner-color, #FFFFFF); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-button:vertical:start:increment, #preview::-webkit-scrollbar-button:vertical:end:decrement, #preview::-webkit-scrollbar-button:horizontal:start:increment, #preview::-webkit-scrollbar-button:horizontal:end:decrement { display: var(--show-double-buttons, none); }
 
 	@media (max-width: 1023px) {
 		main{

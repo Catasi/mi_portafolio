@@ -1,6 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { IslaDinamicaFormacion } from "../components/formacion/IslaDinamicaFormacion.jsx";
+import { IslaDinamicaFormacion } from "../../components/formacion/IslaDinamicaFormacion.jsx";
 import i18next, { t, changeLanguage } from "i18next";
 
 changeLanguage("en");
@@ -8,10 +7,10 @@ changeLanguage("en");
 const currentLanguage = i18next.language;
 ---
 
-<Layout>
-    <p>{t("titles.formation")}</p>
+<section id="formacion">
+    <h2 class="text-[#e8e8e8] text-2xl font-bold">{t("titles.formation")}</h2>
 
     <IslaDinamicaFormacion currentLanguage={currentLanguage} client:only="react" />
 
-</Layout>
+</section>
 

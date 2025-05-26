@@ -1,21 +1,18 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
+import { changeLanguage } from "i18next";
 import Layout from "../layouts/Layout.astro";
-import { getProyectos } from "../data/getData.js";
-import { TarjetaProyecto } from "../components/home/IslaDinamicaMostrarDetallesP.jsx";
+import Proyects from "../components/home/proyects.astro";
+import Conocimientos from "../components/home/conocimientos.astro";
+import Herramientas from "../components/home/herramientas.astro";
+import Formacion from "../components/home/formacion.astro";
 
 changeLanguage("en");
-
-const currentLanguage = i18next.language;
-const proyectos = getProyectos(currentLanguage);
 ---
 
 <Layout>
-    <h2>{t("titles.proyects")}</h2>
-    <div class="proyectos">
-        {proyectos.map((proyecto) => (
-            <TarjetaProyecto client:only="react" proyecto={proyecto} />
-        ))}        
-    </div>
+    <Proyects />
+    <Conocimientos />
+    <Herramientas />
+    <Formacion />
 </Layout>
 

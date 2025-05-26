@@ -1,13 +1,12 @@
 ---
 import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
 
 changeLanguage("en");
 ---
 
-<Layout>
+<section id="conocimientos" class="scroll-mt-20">
     <div class="conocimiento-container">
-        <h2>{t("knowledges.title")}</h2>
+        <h2 class="text-[#db750e] text-2xl font-bold">{t("knowledges.title")}</h2>
         <ul>
             <li>{t("knowledges.l1")}</li>
             <li>{t("knowledges.l2")}</li>
@@ -20,7 +19,7 @@ changeLanguage("en");
             <li>{t("knowledges.l9")}</li>
         </ul>
 
-        <h2>{t("skills.title")}</h2>
+        <h2 class="text-[#db750e] text-2xl font-bold">{t("skills.title")}</h2>
         <ul>
             <li>{t("skills.l1")}</li>
             <li>{t("skills.l2")}</li>
@@ -32,12 +31,10 @@ changeLanguage("en");
             <li>{t("skills.l8")}</li>
         </ul>
     </div>
-</Layout>
+</section>
 
 <style>
     .conocimiento-container {
-        padding-left: 2rem;
-        max-width: auto;
         margin: 0 auto;
     }
 
@@ -52,8 +49,7 @@ changeLanguage("en");
 
     ul {
         list-style-type: disc;
-        padding-left: 1.5rem;
-        margin-bottom: 2rem;
+        padding-left: 4rem;
     }
 
     li {
