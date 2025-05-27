@@ -8,7 +8,7 @@ export function TarjetaProyecto({ proyecto }) {
 
   return (
     <div className={`proyecto ${mostrarDetalles ? 'expandido' : ''}`}>
-        <div class="proyecto-contenido">
+        <div className="proyecto-contenido">
           <img src={proyecto.img} alt={proyecto.nombre} className="proyecto-img" />
           <div className="proyecto-info">
               <h3>{proyecto.nombre}</h3>

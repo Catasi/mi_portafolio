@@ -2,12 +2,14 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Aside from '../components/Aside.astro';
+import { Pointer } from "@/components/magicui/pointer";
 import "../styles/global.css";
 import {t} from 'i18next';
 ---
 
 <!doctype html>
 <html lang="es">
+	
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,16 +18,27 @@ import {t} from 'i18next';
 		<title>{t("site.title")}</title>
 	</head>
 	<body>
-		<Header />
-		<main>
-			<aside class="sticky top-23">
-				<Aside />
-			</aside>
-			<section>
-				<h1 class="text-2xl text-center">Aideé Casillas</h1>
-				<slot />
-			</section>	
-		</main>
+		<video
+			src="/video/bg_galaxia2.mp4"
+			autoplay
+			loop
+			muted
+			playsinline
+			class="w-full h-full object-fill fixed top-0 z-[-1]" >
+		</video>
+		<div id="pointer-wrapper" class="relative w-full h-full min-h-screen">
+			<Header />
+			<main>
+				<aside class="sticky top-23">
+					<Aside />
+				</aside>
+				<section>
+					<h1 class="text-2xl text-center">Aideé Casillas</h1>
+					<slot />
+				</section>	
+			</main>
+			<Pointer client:idle />
+		</div>
 		<Footer />
 	</body>
 </html>
@@ -39,7 +52,7 @@ import {t} from 'i18next';
 	body {
 		color: white;
 		margin: 0;
-		background-image: url("/img/fondo.jpeg");
+		/* background-image: url("/img/fondo.jpeg"); */
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;

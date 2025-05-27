@@ -1,0 +1,64 @@
+---
+import { IconCloud } from "@/components/magicui/icon-cloud";
+import { images } from "../data/dataImg.js";
+import React, { Component } from "react";
+import ParticlesBg from "particles-bg";
+import "../styles/global.css";
+
+const config = {
+      num: [4, 7],
+      rps: 0.1,
+      radius: [5, 40],
+      life: [1.5, 3],
+      v: [2, 3],
+      tha: [-40, 40],
+      // body: "./img/icon.png", // Whether to render pictures
+      // rotate: [0, 20],
+      alpha: [0.6, 0],
+      scale: [0.1, 0.4],
+      position: "all", // all or center or {x:1,y:1,width:100,height:100}
+      color: ["#db750e", "#F0820C", "#F0BD0C"],
+      cross: "dead", // cross or bround
+      random: 15,  // or null,
+      g: 5,    // gravity
+      // f: [2, -1], // force
+      
+};
+---
+
+<body>
+    <!-- <video
+        src="/video/inicio.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+        class="w-full h-full object-fill fixed top-0 z-[-1]" >
+    </video> -->
+    <ParticlesBg client:only type="custom" config={config} bg={true} />
+    <div class="relative w-full h-full min-h-screen flex flex-row bg-black/40">
+        <div class="relative overflow-hidden flex-1">
+            <IconCloud client:load images={images} />
+        </div>
+        <div class="flex-1">
+            Aideé Casillas
+            Bienvenid@ a mi portafolio
+            Dale click al botón de abajo para ver mi portafolio
+        </div>
+    </div>
+</body>
+
+
+<style>
+
+    body {
+		color: white;
+        padding: 0;
+		margin: 0;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		font-family: var(--font-mono);
+	}
+
+</style>
