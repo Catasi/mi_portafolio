@@ -1,53 +1,47 @@
 ---
 import { changeLanguage } from "i18next";
+
+changeLanguage("en");
+
 import { IconCloud } from "@/components/magicui/icon-cloud";
 import { images } from "../data/dataImg.js";
 import ParticlesBg from "particles-bg";
 import "../styles/global.css";
 
-changeLanguage("en");
-
 const config = {
-    num: [4, 10],
-    rps: 0.5,
-    radius: [150, 200],
-    life: [5, 10],
-    v: [1, 5],
-    tha: [-40, 40],
-    // body: "./img/icon.png", // Whether to render pictures
-    // rotate: [0, 20],
-    alpha: [0.6, 0],
-    scale: [0.1, 0.4],
-    position: "all",
-    color: ["#FF9705"],
-    cross: "dead",
-    random: 15,
-    g: 1, // gravity
-    // f: [2, -1], // force
+      num: [4, 10],
+      rps: 0.5,
+      radius: [150, 200], 
+      life: [5, 10],
+      v: [1, 5],
+      tha: [-40, 40],
+      // body: "./img/icon.png", // Whether to render pictures
+      // rotate: [0, 20],
+      alpha: [0.6, 0],
+      scale: [0.1, 0.4],
+      position: "all", // all or center or {x:1,y:1,width:100,height:100} 
+      color: ["#FF9705"],
+      cross: "dead", // cross or bround
+      random: 15,  // or null,
+      g: 1, // gravity
+      // f: [2, -1], // force
+      
 };
 ---
 
 <body class="bg-black">
-    <!-- <video
-        src="/video/inicio.mp4"
-        autoplay
-        loop
-        muted
-        playsinline
-        class="w-full h-full object-fill fixed top-0 z-[-1]" >
-    </video> -->
-    <ParticlesBg client:only type="circle" color={["#FF9705", "#E05C00", "#E09F00"]} bg={true} />
-    <div class="relative w-full h-full min-h-screen flex flex-row bg-gradient-to-r from-black to-white/0">
-        <div class="flex-1 flex items-center justify-center ">
+    <!-- <ParticlesBg client:only type="circle" color={["#FF9705", "#E05C00", "#E09F00"]} bg={true} /> -->
+    <div class="relative w-full h-full min-h-screen flex flex-row">
+        <div class="flex-1 flex items-center justify-center bg-gradient-to-r from-black to-white/0">
             <div class="aspect-square w-[min(100%,_40vw)] h-auto">
                 <IconCloud client:load images={images} />
             </div>
         </div>
-        <div class="flex-1">
+        <div class="flex-1 anton-regular">
             <div class="flex flex-col justify-center items-center min-h-screen">
                 <div>
-                  <h1 class="text-white text-center text-6xl font-bold mb-30">
-                    Bienvenid@ a mi portafolio
+                  <h1 class="text-white text-[120px] font-bold mb-25 text-shadow-lg/50">
+                    BIENVENIDX A MI PORTAFOLIO
                   </h1>
                   <p class="text-white text-center text-2xl mt-4 ">
                     Scrollea hacia abajo para ver mi portafolio
@@ -66,6 +60,13 @@ const config = {
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+    .anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
 
     body {
 		color: white;
@@ -74,7 +75,7 @@ const config = {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		font-family: var(--font-mono);
+		font-family: "Anton", sans-serif;
 	}
 
 </style>

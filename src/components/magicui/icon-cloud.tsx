@@ -37,7 +37,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     startTime: number;
     duration: number;
   } | null>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number>(0);
   const rotationRef = useRef(rotation);
   const iconCanvasesRef = useRef<HTMLCanvasElement[]>([]);
   const imagesLoadedRef = useRef<boolean[]>([]);
@@ -48,11 +48,12 @@ export function IconCloud({ icons, images }: IconCloudProps) {
 
     const items = icons || images || [];
     imagesLoadedRef.current = new Array(items.length).fill(false);
+    const dpr = window.devicePixelRatio || 1;
 
     const newIconCanvases = items.map((item, index) => {
       const offscreen = document.createElement("canvas");
-      offscreen.width = 40;
-      offscreen.height = 40;
+      offscreen.width = 70 * dpr;
+      offscreen.height = 70 * dpr;
       const offCtx = offscreen.getContext("2d");
 
       if (offCtx) {
@@ -62,16 +63,16 @@ export function IconCloud({ icons, images }: IconCloudProps) {
           img.crossOrigin = "anonymous";
           img.src = items[index] as string;
           img.onload = () => {
-            offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
+            offCtx.clearRect(0, 0, 70, 70);
 
             // Create circular clipping path
             offCtx.beginPath();
-            offCtx.arc(20, 20, 20, 0, Math.PI * 2);
+            offCtx.arc(35, 35, 35, 0, Math.PI * 2);
             offCtx.closePath();
             offCtx.clip();
 
             // Draw the image
-            offCtx.drawImage(img, 0, 0, 40, 40);
+            offCtx.drawImage(img, 0, 0, 70, 70);
 
             imagesLoadedRef.current[index] = true;
           };
@@ -82,8 +83,8 @@ export function IconCloud({ icons, images }: IconCloudProps) {
           const img = new Image();
           img.src = "data:image/svg+xml;base64," + btoa(svgString);
           img.onload = () => {
-            offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
-            offCtx.drawImage(img, 0, 0);
+            offCtx.clearRect(0, 0, 70, 70);
+            offCtx.drawImage(img, 0, 0, 70, 70);
             imagesLoadedRef.current[index] = true;
           };
         }
@@ -113,9 +114,9 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       const z = Math.sin(phi) * r;
 
       newIcons.push({
-        x: x * 100,
-        y: y * 100,
-        z: z * 100,
+        x: x * 250,
+        y: y * 250,
+        z: z * 250,
         scale: 1,
         opacity: 1,
         id: i,
@@ -215,12 +216,36 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
+    const dpr = window.devicePixelRatio || 1;
+
+    const resizeCanvas = () => {
+      const parent = canvas.parentElement;
+      if (!parent) return;
+  
+      const width = parent.clientWidth || 700;
+      const height = parent.clientHeight || 700;
+  
+      // Ajustar resolución del canvas al DPR
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+  
+      // Estilo visual (lo que se ve)
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height }px`;
+    };
+
+    resizeCanvas(); // Inicial
+    window.addEventListener("resize", resizeCanvas);
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Reset transform y escalar para DPR:
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      // Escalar para que todo se vea nítido
+      ctx.scale(dpr, dpr);
 
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
+      const centerX = canvas.width / dpr / 2;
+      const centerY = canvas.height / dpr / 2;
       const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);
       const dx = mousePos.x - centerX;
       const dy = mousePos.y - centerY;
@@ -266,8 +291,8 @@ export function IconCloud({ icons, images }: IconCloudProps) {
 
         ctx.save();
         ctx.translate(
-          canvas.width / 2 + rotatedX,
-          canvas.height / 2 + rotatedY,
+          canvas.width / dpr / 2 + rotatedX,
+          canvas.height / dpr/ 2 + rotatedY,
         );
         ctx.scale(scale, scale);
         ctx.globalAlpha = opacity;
@@ -278,7 +303,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
             iconCanvasesRef.current[index] &&
             imagesLoadedRef.current[index]
           ) {
-            ctx.drawImage(iconCanvasesRef.current[index], -20, -20, 40, 40);
+            ctx.drawImage(iconCanvasesRef.current[index], -35, -35, 70, 70);
           }
         } else {
           // Show numbered circles if no icons/images are provided
@@ -304,19 +329,20 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, [icons, images, iconPositions, isDragging, mousePos, targetRotation]);
 
   return (
     <canvas
       ref={canvasRef}
-      width={400}
-      height={400}
+      width={700}
+      height={700}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      className="rounded-lg"
+      className="w-full h-full block"
       aria-label="Interactive 3D Icon Cloud"
       role="img"
     />

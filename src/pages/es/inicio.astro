@@ -1,10 +1,80 @@
 ---
 import { changeLanguage } from "i18next";
-import Layout_Inicio from "../../layouts/Layout_Inicio.astro";
+import { IconCloud } from "@/components/magicui/icon-cloud";
+import { images } from "../../data/dataImg.js";
+import ParticlesBg from "particles-bg";
+import "../../styles/global.css";
 
 changeLanguage("es");
+
+const config = {
+    num: [4, 10],
+    rps: 0.5,
+    radius: [150, 200],
+    life: [5, 10],
+    v: [1, 5],
+    tha: [-40, 40],
+    // body: "./img/icon.png", // Whether to render pictures
+    // rotate: [0, 20],
+    alpha: [0.6, 0],
+    scale: [0.1, 0.4],
+    position: "all",
+    color: ["#FF9705"],
+    cross: "dead",
+    random: 15,
+    g: 1, // gravity
+    // f: [2, -1], // force
+};
 ---
 
+<body class="bg-black">
+    <!-- <video
+        src="/video/inicio.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+        class="w-full h-full object-fill fixed top-0 z-[-1]" >
+    </video> -->
+    <ParticlesBg client:only type="circle" color={["#FF9705", "#E05C00", "#E09F00"]} bg={true} />
+    <div class="relative w-full h-full min-h-screen flex flex-row bg-gradient-to-r from-black to-white/0">
+        <div class="flex-1 flex items-center justify-center ">
+            <div class="aspect-square w-[min(100%,_40vw)] h-auto">
+                <IconCloud client:load images={images} />
+            </div>
+        </div>
+        <div class="flex-1">
+            <div class="flex flex-col justify-center items-center min-h-screen">
+                <div>
+                  <h1 class="text-white text-center text-6xl font-bold mb-30">
+                    Bienvenid@ a mi portafolio
+                  </h1>
+                  <p class="text-white text-center text-2xl mt-4 ">
+                    Scrollea hacia abajo para ver mi portafolio
+                  </p>
+                </div>
+                <div class="flex justify-center items-center mt-10">
+                  <img src="/img/flecha-abajo.png" alt="flecha hacia abajo" class="w-10 h-10 animate-bounce" />
+                  <!-- <a href="/" class="bg-white text-black rounded-full px-8 py-2 text-xl font-bold">
+                      Ver mi Portafolio
+                  </a> -->
+                </div>
+              </div>              
+        </div>
+    </div>
+</body>
 
-<Layout_Inicio>
-</Layout_Inicio>
+
+<style>
+
+    body {
+		color: white;
+        padding: 0;
+		margin: 0;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		font-family: var(--font-mono);
+	}
+
+</style>

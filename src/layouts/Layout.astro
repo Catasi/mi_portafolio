@@ -5,6 +5,7 @@ import Aside from '../components/Aside.astro';
 import { Pointer } from "@/components/magicui/pointer";
 import "../styles/global.css";
 import {t} from 'i18next';
+import Inicio from '@/components/Inicio.astro';
 ---
 
 <!doctype html>
@@ -18,13 +19,14 @@ import {t} from 'i18next';
 		<title>{t("site.title")}</title>
 	</head>
 	<body>
+		<Inicio />
 		<video
 			src="/video/bg_galaxia2.mp4"
 			autoplay
 			loop
 			muted
 			playsinline
-			class="w-full h-full object-fill fixed top-0 z-[-1]" >
+			class="w-full h-full object-fill fixed top-0 z-[-10]" >
 		</video>
 		<div id="pointer-wrapper" class="relative w-full h-full min-h-screen">
 			<Header />

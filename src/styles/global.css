@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
     --primary-color: #db750e;
     --secondary-color: #2e2b2b;

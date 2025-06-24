@@ -20,4 +20,7 @@ export const images = [
   "/img/herramientas/arduino.png",
   "/img/herramientas/awsec2.png",
   "/img/herramientas/nodejs.png",
+  "/react.svg",
+  "/tailwindcss.svg",
+  "/favicon.svg",
 ];

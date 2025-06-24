@@ -3,6 +3,7 @@ import { datosAside } from '../data/datosAside.js';
 import i18next, {t} from 'i18next';
 
 const lang = i18next.language;
+const base = i18next.language === 'en' ? '' :  `/${lang}`
 ---
 
 <div class="aside-container">
@@ -31,9 +32,20 @@ const lang = i18next.language;
       </div>
       ))}
       <button>
-        <a href="src/assets/CV_AideéCasillas.pdf" download="CV_AideéCasillas.pdf">
-          {t("aside.buttonCV")}
-        </a>
+        {lang === "en" ? (
+          <a href="/src/assets/CV_AideéCasillas_en.pdf" download="CV_AideéCasillas.pdf">
+            {t("aside.buttonCV")}
+          </a>
+        ) : (lang === "fr" ? (
+          <a href="/src/assets/CV_AideéCasillas_fr.pdf" download="CV_AideéCasillas.pdf">
+            {t("aside.buttonCV")}
+          </a>
+        ) : (
+          <a href="/src/assets/CV_AideéCasillas.pdf" download="CV_AideéCasillas.pdf">
+            {t("aside.buttonCV")}
+          </a>
+          ))
+        } 
       </button>
   </div>
   
