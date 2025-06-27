@@ -19,19 +19,18 @@ import Inicio from '@/components/Inicio.astro';
 		<title>{t("site.title")}</title>
 	</head>
 	<body>
-		<Inicio />
 		<video
-			src="/video/bg_galaxia2.mp4"
+			src="/public/video/bg_galaxia2.mp4"
 			autoplay
 			loop
 			muted
 			playsinline
-			class="w-full h-full object-fill fixed top-0 z-[-10]" >
+			class="w-full h-full object-cover fixed top-0 " >
 		</video>
 		<div id="pointer-wrapper" class="relative w-full h-full min-h-screen">
 			<Header />
 			<main>
-				<aside class="sticky top-23">
+				<aside class="sticky top-24">
 					<Aside />
 				</aside>
 				<section>
@@ -69,7 +68,7 @@ import Inicio from '@/components/Inicio.astro';
 
 	aside {
 		align-content: flex-start;
-		width: 300px;
+		width: 350px;
 		max-width: 100%;
 		height: max-content;
 	}

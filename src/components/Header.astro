@@ -5,14 +5,14 @@ import { LanguageSelector } from 'astro-i18next/components'
 const lang = i18next.language
 const base = i18next.language === 'en' ? '' :  `/${lang}`
 ---
-<header class="sticky top-0 z-50">
-    <div class="logo">
+<header class="flex justify-between items-center bg-[#2e2b2b] text-font-mono rounded-[10px] p-4 sticky top-0 z-50">
+    <div class="flex items-center gap-4 pl-2.5 logo">
       <img src="/favicon.svg" alt="astro_favicon" class="img-fluid">
       <img src="/react.svg" alt="react_favicon" class="img-fluid">
       <img src="/tailwindcss.svg" alt="tailwindcss_favicon" class="img-fluid">
     </div>
-    <div class="right-side">
-      <nav class="nav-links">
+    <div class="flex flex-wrap gap-4 h-auto right-side">
+      <nav class="nav-links flex flex-wrap gap-4">
         <a href={`${base}/#proyectos`}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -60,48 +60,18 @@ const base = i18next.language === 'en' ? '' :  `/${lang}`
         <LanguageSelector
           showFlag={true}
           aria-label='Select language'
-          class='languaje-selector'
+          class='block w-[7rem] p-2.5 rounded-[0.5rem] bg-[#2e2b2b] text-white border-white'
         />
       </div>
     </div>
 </header>
 
 <style>
-:root {
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-}
-
-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #2e2b2b;
-  color: #fff;
-  font-family: var(--font-mono);
-  border-radius: 10px;
-}
-
 svg {
   width: 35px;
   height: 35px;
 }
-
-.right-side {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  height: auto;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px; 
-  padding-left: 10px;
-}
-
-.logo img {
+img {
   width: 40px;
   height: 40px;
   object-fit: cover;
@@ -109,85 +79,55 @@ svg {
   transition: transform 0.3s ease;
   border: none; /* Asegura que no haya bordes */
 }
-
-.logo:hover img {
+img:hover {
   transform: scale(1.2);
   filter: brightness(1.0);
 }
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
 nav a {
-  color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
 nav a:hover {
   color: #D95E1C;
 }
-
 .button-language {
     display: flex;
     align-items: center;
   }
-
 .button-language img {
   height: 2rem;
   width: 2rem;
   border-radius: 9999px;
   margin-right: 0.5rem;
 }
-
-.languaje-selector {
-    display: block;
-    width: 7rem;
-    padding: 0.625rem;
-    border-radius: 0.5rem;
-    background-color:  #2e2b2b;
-    border-color: white;
-    color: white;
-  }
-
-
 @media (max-width: 768px) {
     .nav-links{
         transition: all 0.3s ease;
     }
-    
 }
-
 @media (min-width: 932px) {
     svg {
       display: none;
     }
 }
-
 @media (max-width: 931px) {
     header {
       gap: 20px;
     }
-
     span {
       display: none;
-    }
-    
+    } 
     .right-side {
         flex-wrap: nowrap;
     }
 }
-
 @media (max-width: 560px) {
     .logo {
       display: none;
     }
 }
-
 @media (max-width: 426px) {
     .right-side {
         flex-wrap: wrap;
@@ -195,13 +135,11 @@ nav a:hover {
         align-items: center;
         text-align: center;
     }
-
     svg {
       width: 30px;
       height: 30px;
     }
 }
-
 @media (max-width: 320px) {
   nav {
     gap: 0.5rem;

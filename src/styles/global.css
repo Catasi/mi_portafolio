@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "daisyui";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,6 +9,7 @@ html {
 }
 
 :root {
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
     --primary-color: #db750e;
     --secondary-color: #2e2b2b;
     --radius: 0.625rem;
