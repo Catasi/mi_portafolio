@@ -10,37 +10,53 @@ import Inicio from '@/components/Inicio.astro';
 
 <!doctype html>
 <html lang="es">
-	
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/icon-galaxy.png" />
 		<meta name="description" content={t("site.description")} />
 		<title>{t("site.title")}</title>
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<!-- fullPage.js CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+		<!-- fullPage.js JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+		<!-- scrollOverflow addon -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"></script>
+
 	</head>
 	<body>
 		<video
-			src="/public/video/bg_galaxia2.mp4"
+			src="/video/bg_galaxia2.mp4"
 			autoplay
 			loop
 			muted
 			playsinline
 			class="w-full h-full object-cover fixed top-0 " >
 		</video>
-		<div id="pointer-wrapper" class="relative w-full h-full min-h-screen">
-			<Header />
-			<main>
-				<aside class="sticky top-24">
-					<Aside />
-				</aside>
-				<section>
-					<h1 class="text-2xl text-center">Aideé Casillas</h1>
-					<slot />
-				</section>	
-			</main>
-			<Pointer client:idle />
+		<div  id="fullpage">
+			<div class="section">
+				<Inicio />
+			</div>
+			<div class="section relative w-full h-full min-h-screen">
+				<Header />
+				<main>
+					<aside class="sticky top-24 left-0 w-full">
+						<Aside />
+					</aside>
+					<section>
+						<div class="overflow-y-auto h-full px-4 scroll-smooth scrollbar-thin scrollbar-thumb-sky-500 scrollbar-track-transparent">
+							<h1 class="text-2xl text-center">Aideé Casillas</h1>
+							<slot />
+						</div>
+					</section>	
+				</main>
+				<Pointer client:idle />
+				<Footer />
+			</div>
 		</div>
-		<Footer />
+		<script type="module" src="/src/scripts/fullpage-init.ts"></script>	
 	</body>
 </html>
 
