@@ -9,73 +9,76 @@ import ParticlesBg from "particles-bg";
 import "../styles/global.css";
 
 const config = {
-      num: [4, 10],
-      rps: 0.5,
-      radius: [150, 200], 
-      life: [5, 10],
-      v: [1, 5],
-      tha: [-40, 40],
-      // body: "./img/icon.png", // Whether to render pictures
-      // rotate: [0, 20],
-      alpha: [0.6, 0],
-      scale: [0.1, 0.4],
-      position: "all", // all or center or {x:1,y:1,width:100,height:100} 
-      color: ["#FF9705"],
-      cross: "dead", // cross or bround
-      random: 15,  // or null,
-      g: 1, // gravity
-      // f: [2, -1], // force
-      
+  num: [4, 10],
+  rps: 0.5,
+  radius: [150, 200],
+  life: [5, 10],
+  v: [1, 5],
+  tha: [-40, 40],
+  // body: "./img/icon.png", // Whether to render pictures
+  // rotate: [0, 20],
+  alpha: [0.6, 0],
+  scale: [0.1, 0.4],
+  position: "all", // all or center or {x:1,y:1,width:100,height:100}
+  color: ["#FF9705"],
+  cross: "dead", // cross or bround
+  random: 15, // or null,
+  g: 1, // gravity
+  // f: [2, -1], // force
 };
 ---
 
-<body class="bg-black">
-    <!-- <ParticlesBg client:only type="circle" color={["#FF9705", "#E05C00", "#E09F00"]} bg={true} /> -->
-    <div class="relative w-full h-full min-h-screen flex flex-row">
-        <div class="flex-1 flex items-center justify-center bg-gradient-to-r from-black to-white/0">
-            <div class="aspect-square w-[min(100%,_40vw)] h-auto">
-                <IconCloud client:load images={images} />
-            </div>
+<section class="section">
+  <!-- <ParticlesBg client:only type="circle" color={["#FF9705", "#E05C00", "#E09F00"]} bg={true} /> -->
+  <div class="relative w-full h-full min-h-screen flex flex-row">
+    <div
+      class="flex-1 flex items-center justify-center bg-gradient-to-r from-black to-white/0"
+    >
+      <div class="aspect-square w-[min(100%,_40vw)] h-auto">
+        <IconCloud client:load images={images} />
+      </div>
+    </div>
+    <div class="flex-1 anton-regular">
+      <div class="flex flex-col justify-center items-center min-h-screen">
+        <div>
+          <h1 class="text-white text-[120px] font-bold mb-25 text-shadow-lg/50">
+            BIENVENIDX A MI PORTAFOLIO
+          </h1>
+          <p class="text-white text-center text-2xl mt-4">
+            Scrollea hacia abajo para ver mi portafolio
+          </p>
         </div>
-        <div class="flex-1 anton-regular">
-            <div class="flex flex-col justify-center items-center min-h-screen">
-                <div>
-                  <h1 class="text-white text-[120px] font-bold mb-25 text-shadow-lg/50">
-                    BIENVENIDX A MI PORTAFOLIO
-                  </h1>
-                  <p class="text-white text-center text-2xl mt-4 ">
-                    Scrollea hacia abajo para ver mi portafolio
-                  </p>
-                </div>
-                <div class="flex justify-center items-center mt-10">
-                  <img src="/img/flecha-abajo.png" alt="flecha hacia abajo" class="w-10 h-10 animate-bounce" />
-                  <!-- <a href="/" class="bg-white text-black rounded-full px-8 py-2 text-xl font-bold">
+        <div class="flex justify-center items-center mt-10">
+          <img
+            src="/img/flecha-abajo.png"
+            alt="flecha hacia abajo"
+            class="w-10 h-10 animate-bounce"
+          />
+          <!-- <a href="/" class="bg-white text-black rounded-full px-8 py-2 text-xl font-bold">
                       Ver mi Portafolio
                   </a> -->
-                </div>
-              </div>              
         </div>
+      </div>
     </div>
-</body>
-
+  </div>
+</section>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
-    .anton-regular {
+  .anton-regular {
     font-family: "Anton", sans-serif;
     font-weight: 400;
     font-style: normal;
-    }
+  }
 
-    body {
-		color: white;
-        padding: 0;
-		margin: 0;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		font-family: "Anton", sans-serif;
-	}
-
+  section {
+    color: white;
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Anton", sans-serif;
+  }
 </style>

@@ -8,11 +8,12 @@ const proyectos = getProyectos(currentLanguage);
 ---
 
 <section id="proyectos" class="scroll-mt-50">
-    <h2 class="text-[#e8e8e8] text-2xl font-bold">{t("titles.proyects")}</h2>
-    <div class="proyectos">
-        {proyectos.map((proyecto) => (
-            <TarjetaProyecto client:only="react" proyecto={proyecto} />
-        ))}        
-    </div>
+  <h2 class="text-[#e8e8e8] text-2xl font-bold">{t("titles.proyects")}</h2>
+  <div class="proyectos">
+    {
+      proyectos.map((proyecto) => (
+        <TarjetaProyecto client:only="react" proyecto={proyecto} />
+      ))
+    }
+  </div>
 </section>
-

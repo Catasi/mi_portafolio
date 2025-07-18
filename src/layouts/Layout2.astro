@@ -39,32 +39,14 @@ import Inicio from "@/components/Inicio.astro";
       loop
       muted
       playsinline
-      class="w-full h-full object-cover fixed top-0"
+      class="w-full max-h-max object-cover fixed top-[-100px]"
     >
     </video>
-    <div id="fullpage">
-      <div class="section">
-        <Inicio />
-      </div>
-      <div class="section relative w-full h-full min-h-screen">
-        <Header />
-        <main>
-          <aside class="sticky top-24 left-0 w-full h-full">
-            <Aside />
-          </aside>
-          <section>
-            <div
-              class="overflow-y-auto h-full px-4 scroll-smooth scrollbar-thin scrollbar-thumb-sky-500 scrollbar-track-transparent"
-            >
-              <h1 class="text-2xl text-center">Aideé Casillas</h1>
-              <slot />
-            </div>
-          </section>
-        </main>
-        <Pointer client:idle />
-        <Footer />
-      </div>
-    </div>
+    <main id="fullpage">
+      <Inicio />
+      <slot />
+      <Footer />
+    </main>
     <script type="module" src="/src/scripts/fullpage-init.ts"></script>
   </body>
 </html>
@@ -81,32 +63,6 @@ import Inicio from "@/components/Inicio.astro";
     background-position: center;
     background-repeat: no-repeat;
     font-family: var(--font-mono);
-  }
-  aside,
-  section {
-    background-color: #2e2b2b;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-  }
-
-  aside {
-    align-content: flex-start;
-    width: 350px;
-    max-width: 100%;
-    height: max-content;
-  }
-
-  section {
-    flex: 1;
-    min-width: 0;
-  }
-
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 20px 100px 20px 100px;
   }
 
   body {
@@ -147,44 +103,5 @@ import Inicio from "@/components/Inicio.astro";
   #preview::-webkit-scrollbar-button:horizontal:start:increment,
   #preview::-webkit-scrollbar-button:horizontal:end:decrement {
     display: var(--show-double-buttons, none);
-  }
-
-  @media (max-width: 1023px) {
-    main {
-      display: grid;
-    }
-
-    aside {
-      position: static;
-    }
-
-    aside {
-      width: auto;
-    }
-  }
-
-  @media (max-width: 768px) {
-    main {
-      margin: 0;
-      padding: 10px 50px 10px 50px;
-    }
-  }
-
-  @media (max-width: 426px) {
-    main {
-      margin: 0;
-      padding: 10px 20px 10px 20px;
-    }
-  }
-
-  @media (max-width: 320px) {
-    aside,
-    section {
-      padding: 0;
-    }
-
-    h2 {
-      text-align: center;
-    }
   }
 </style>
