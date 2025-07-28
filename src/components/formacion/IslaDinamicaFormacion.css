@@ -23,7 +23,6 @@
 
   .contenido-acordion {
     background-color: #313131;
-    overflow: hidden;
     transition: max-height 0.5s ease;
     display: flex;
     flex-wrap: wrap;

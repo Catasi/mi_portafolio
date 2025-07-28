@@ -16,21 +16,6 @@ import Inicio from "@/components/Inicio.astro";
     <link rel="icon" type="image/svg+xml" href="/icon-galaxy.png" />
     <meta name="description" content={t("site.description")} />
     <title>{t("site.title")}</title>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- fullPage.js CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
-    />
-    <!-- fullPage.js JS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
-    ></script>
-    <!-- scrollOverflow addon -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"
-    ></script>
   </head>
   <body>
     <video
@@ -42,11 +27,8 @@ import Inicio from "@/components/Inicio.astro";
       class="w-full h-full object-cover fixed top-0"
     >
     </video>
-    <div id="fullpage">
-      <div class="section">
-        <Inicio />
-      </div>
-      <div class="section relative w-full h-full min-h-screen">
+    <div>
+      <div class="relative w-full h-full min-h-screen">
         <Header />
         <main>
           <aside class="sticky top-24 left-0 w-full h-full">
@@ -65,7 +47,6 @@ import Inicio from "@/components/Inicio.astro";
         <Footer />
       </div>
     </div>
-    <script type="module" src="/src/scripts/fullpage-init.ts"></script>
   </body>
 </html>
 

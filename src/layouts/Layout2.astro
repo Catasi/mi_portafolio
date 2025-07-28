@@ -1,11 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Aside from "../components/Aside.astro";
-import { Pointer } from "@/components/magicui/pointer";
 import "../styles/global.css";
 import { t } from "i18next";
-import Inicio from "@/components/Inicio.astro";
 ---
 
 <!doctype html>
@@ -43,9 +38,7 @@ import Inicio from "@/components/Inicio.astro";
     >
     </video>
     <main id="fullpage">
-      <Inicio />
       <slot />
-      <Footer />
     </main>
     <script type="module" src="/src/scripts/fullpage-init.ts"></script>
   </body>
@@ -58,7 +51,6 @@ import Inicio from "@/components/Inicio.astro";
   body {
     color: white;
     margin: 0;
-    /* background-image: url("/img/fondo.jpeg"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
