@@ -5,32 +5,38 @@ import i18next, { t, changeLanguage } from "i18next";
 let currentLanguage = i18next.language;
 ---
 
-<section class="section p-10">
-  <div class="gap-10 flex flex-row">
-    {
-      herramientas.map((herramienta) => (
-        <div class="bg-black/50 p-5 rounded-lg">
-          {currentLanguage === "fr" ? (
-            <h3>{herramienta.titulo_fr}</h3>
-          ) : currentLanguage === "en" ? (
-            <h3>{herramienta.titulo_en}</h3>
-          ) : (
-            <h3>{herramienta.titulo_es}</h3>
-          )}
-          <br />
-          <div class="tipos">
-            <div class="tipo">
-              {herramienta.tipos.map((tipo) => (
-                <div class="tipo-info">
-                  <img src={tipo.img} alt={tipo.nombre} class="tipo-img" />
-                  <p>{tipo.herramienta}</p>
-                </div>
-              ))}
+<section class="section">
+  <div class="bg-[url('/img/bg-3.png')] bg-cover bg-center">
+    <div class="gap-10 flex flex-row bg-black/80 rounded-2xl m-10">
+      {
+        herramientas.map((herramienta) => (
+          <div class="p-5 rounded-lg">
+            {currentLanguage === "fr" ? (
+              <h3>{herramienta.titulo_fr}</h3>
+            ) : currentLanguage === "en" ? (
+              <h3>{herramienta.titulo_en}</h3>
+            ) : (
+              <h3>{herramienta.titulo_es}</h3>
+            )}
+            <br />
+            <div class="tipos">
+              <div class="tipo">
+                {herramienta.tipos.map((tipo) => (
+                  <div class="tipo-info">
+                    <img
+                      data-src={tipo.img}
+                      alt={tipo.nombre}
+                      class="tipo-img"
+                    />
+                    <p>{tipo.herramienta}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 </section>
 

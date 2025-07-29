@@ -11,21 +11,11 @@ import { t } from "i18next";
     <link rel="icon" type="image/svg+xml" href="/icon-galaxy.png" />
     <meta name="description" content={t("site.description")} />
     <title>{t("site.title")}</title>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- fullPage.js CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
     />
-    <!-- fullPage.js JS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
-    ></script>
-    <!-- scrollOverflow addon -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"
-    ></script>
   </head>
   <body>
     <video
@@ -34,13 +24,23 @@ import { t } from "i18next";
       loop
       muted
       playsinline
-      class="w-full max-h-max object-cover fixed top-[-100px]"
+      class="w-full h-full object-cover fixed"
     >
     </video>
     <main id="fullpage">
       <slot />
     </main>
     <script type="module" src="/src/scripts/fullpage-init.ts"></script>
+    <!-- fullPage.js JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
+    ></script>
+    <!-- scrollOverflow addon -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"
+    ></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </body>
 </html>
 
