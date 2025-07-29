@@ -72,12 +72,22 @@ export const herramientas = [
         herramienta: "Android Studio v2023.1.13",
         img: ruta + "android_studio.png",
       },
+      {
+        nombre: "IDE",
+        herramienta: "Visual Studio Code v.1.79.2",
+        img: ruta + "vscode.png",
+      },
+      {
+        nombre: "Repositorios",
+        herramienta: "GitHub v.2.38.1",
+        img: ruta + "github.png",
+      },
     ],
   },
   {
-    titulo_es: "Lenguajes de Programación 🔠",
-    titulo_en: "Programming Languages 🔠",
-    titulo_fr: "Langages de Programmation 🔠",
+    titulo_es: "Lenguajes/Frameworks 🔠",
+    titulo_en: "Languages/Frameworks 🔠",
+    titulo_fr: "Langages/Frameworks 🔠",
     tipos: [
       {
         nombre: "Lenguaje de Programación",
@@ -118,6 +128,21 @@ export const herramientas = [
         nombre: "Terminal de Sistema",
         herramienta: "Linux CLI",
         img: ruta + "linux.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Astro v.4.5.3",
+        img: "/favicon.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "React v.19.1.0",
+        img: "/react.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "TailwindCSS v.4.1.4",
+        img: "/tailwindcss.svg",
       },
     ],
   },
