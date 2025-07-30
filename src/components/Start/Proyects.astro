@@ -9,14 +9,12 @@ const proyectos = getProyectos(currentLanguage);
 ---
 
 <section class="section">
-  <div class="bg-[url('/img/bg-2.png')] bg-cover bg-center">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2">
-      <h2 class="text-7xl text-center mt-10">
-        <LineShadowText shadowColor={"white"} client:load content="PROYECTOS">
-          ></LineShadowText
-        >
-      </h2>
-    </div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2">
+    <h2 class="text-7xl text-center mt-10">
+      <LineShadowText shadowColor={"white"} client:load content="PROYECTOS">
+        ></LineShadowText
+      >
+    </h2>
   </div>
   {
     proyectos.map((proyecto) => (

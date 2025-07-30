@@ -8,9 +8,10 @@ const currentLanguage = i18next.language;
 ---
 
 <section id="formacion">
-    <h2 class="text-[#e8e8e8] text-2xl font-bold">{t("titles.formation")}</h2>
+  <h2 class="text-[#e8e8e8] text-2xl font-bold">{t("titles.formation")}</h2>
 
-    <IslaDinamicaFormacion currentLanguage={currentLanguage} client:only="react" />
-
+  <IslaDinamicaFormacion
+    currentLanguage={currentLanguage}
+    client:only="react"
+  />
 </section>
-

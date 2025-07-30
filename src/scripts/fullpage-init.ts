@@ -27,11 +27,13 @@ $(function () {
     navigationPosition: 'left',
     scrollOverflow: true,
     scrollOverflowReset: true,
+    fitToSection: false, 
     autoScrolling: true,
     responsiveSlides: true,
     TouchSensitivity: 10,
     continuousVertical: true,
     continuousHorizontal: true,
+    responsiveHeight: 600,
     fixedElements: '#header, #footer',
   });
 });

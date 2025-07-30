@@ -5,8 +5,10 @@ import i18next, { t, changeLanguage } from "i18next";
 let currentLanguage = i18next.language;
 ---
 
-<section class="section">
-  <div class="bg-[url('/img/bg-3.png')] bg-cover bg-center">
+<section class="section active">
+  <div
+    class="bg-[url('img/bg-3.png')] bg-start bg-cover w-full h-full flex items-center justify-center"
+  >
     <div class="gap-10 flex flex-row bg-black/80 rounded-2xl m-10">
       {
         herramientas.map((herramienta) => (
