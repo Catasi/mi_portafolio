@@ -1,0 +1,79 @@
+.detalles-container {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-50px); /* Inicia más arriba */
+    transition: 
+        max-height 1s ease-out,
+        opacity 0.8s ease-out,
+        transform 1s ease-out;
+}
+
+.detalles-container.mostrar {
+    max-height: 600px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.detalles-container.mostrar{
+    overflow-y: auto;
+}
+/*Contenido del scroll*/
+.detalles-container::-webkit-scrollbar {
+    width: 5px;
+}
+.detalles-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.detalles-container::-webkit-scrollbar-thumb{
+    background: #888;
+}
+
+.detalles-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.detalles-content {
+    padding-top: 1rem;
+}
+
+.herramienta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+    transition-duration: 0.3s;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transition-delay: 0.1s;
+}
+
+.herramienta:hover {
+    transform: translateY(-10px);
+}
+
+.herramienta img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.herramienta p {
+    padding: 5px 0;
+    margin: 0;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+} 
+
+.detalles-container.mostrar .herramienta {
+    transform: translateY(0);
+    opacity: 1;
+}

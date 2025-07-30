@@ -3,6 +3,7 @@ export const ProyectsEspanol = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "AppMedik",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Desarrollo JIVM una aplicación móvil pediátrica para la gestión de citas médicas y la dosificación de medicamentos.",
     herramientas: [
@@ -32,6 +33,7 @@ export const ProyectsEspanol = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "API CRUD para Restaurante “El Zarape”",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Crear servicios RESTful para operaciones CRUD en el sistema de punto de venta del restaurante.",
     herramientas: [
@@ -66,6 +68,7 @@ export const ProyectsEspanol = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "Sistema DAQ para Monitoreo de Sensores",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Implementar un sistema que interactúe con sensores de temperatura y humedad, almacenando datos en una base de datos mediante una interfaz gráfica.",
     herramientas: [
@@ -95,6 +98,7 @@ export const ProyectsEspanol = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "Formulario de Usuarios en Android (CRUD)",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Implementar un sistema CRUD para gestionar usuarios en dispositivos móviles.",
     herramientas: [

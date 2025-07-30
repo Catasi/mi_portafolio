@@ -3,6 +3,7 @@ export const ProyectsFrench = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "AppMedik",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Développement d'une application médicale utilisant des technologies mobiles et des services cloud.",
     herramientas: [
@@ -32,6 +33,7 @@ export const ProyectsFrench = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "API CRUD pour le Restaurant 'El Zarape'",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Créer des services RESTful pour des opérations CRUD dans le système de point de vente du restaurant.",
     herramientas: [
@@ -66,6 +68,7 @@ export const ProyectsFrench = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "Système DAQ pour la Surveillance des Capteurs",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Mettre en œuvre un système qui interagit avec des capteurs de température et d'humidité, en stockant les données dans une base de données via une interface graphique.",
     herramientas: [
@@ -95,6 +98,7 @@ export const ProyectsFrench = [
   {
     img: "/img/galaxia.jpeg",
     nombre: "Formulaire Utilisateur sur Android (CRUD)",
+    area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Mettre en œuvre un système CRUD pour gérer les utilisateurs sur des appareils mobiles.",
     herramientas: [

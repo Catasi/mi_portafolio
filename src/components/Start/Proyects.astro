@@ -1,49 +1,61 @@
 ---
+import i18next, { t, changeLanguage } from "i18next";
+import { LineShadowText } from "@/components/magicui/line-shadow-text";
+import MoreInfo from "./MoreInfo.jsx";
+import { getProyectos } from "../../data/getData.js";
 
+const currentLanguage = i18next.language;
+const proyectos = getProyectos(currentLanguage);
 ---
 
 <section class="section">
   <div class="bg-[url('/img/bg-2.png')] bg-cover bg-center">
-    <div class="slide px-20">
-      <div class="bg-[#333] p-5 rounded-lg h-min w-full">
-        <div class="border-b-2 border-[#db750e] pb-5">
-          <h3>Nombre del Proyecto 1</h3>
-        </div>
-        <div class="flex gap-5 mt-5">
-          <div class="flex-1/2">
-            <img
-              data-src="/img/galaxia.jpeg"
-              alt="Imagen de un proyecto"
-              class="object-cover"
-            />
+    <div class="absolute top-0 left-1/2 -translate-x-1/2">
+      <h2 class="text-7xl text-center mt-10">
+        <LineShadowText shadowColor={"white"} client:load content="PROYECTOS">
+          ></LineShadowText
+        >
+      </h2>
+    </div>
+  </div>
+  {
+    proyectos.map((proyecto) => (
+      <div class="slide px-20">
+        <div class="bg-[#333] p-5 rounded-lg h-min max-w-5xl mx-auto relative">
+          <div class="border-b-2 border-[#db750e] pb-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-white text-xl font-semibold">
+                {proyecto.nombre}
+              </h3>
+              <div class="flex gap-4 items-center text-white text-sm">
+                {/*Mapeo de cada dominio*/}
+                {proyecto.area.map((dominio) => (
+                  <span class="animate-pulse">
+                    ★ <span>{dominio}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-          <div class="flex-1/2">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse congue ullamcorper eros vel laoreet. Donec gravida
-              elit at interdum varius. Nam consequat finibus lorem nec auctor.
-            </p>
-            <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"></path>
-              </svg>
-            </button>
+
+          <div class="flex flex-col md:flex-row gap-5 mt-5 items-center justify-center">
+            <div class="w-full md:w-1/2">
+              <img
+                src={proyecto.img}
+                alt={proyecto.nombre}
+                class="object-cover w-full h-auto rounded-2xl"
+              />
+            </div>
+
+            <div class="w-full md:w-1/2">
+              <p class="text-justify">{proyecto.objetivo}</p>
+              <MoreInfo client:load proyecto={proyecto} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="slide">aquí va una tarjeta de proyectoooooooo 2</div>
-  </div>
+    ))
+  }
 </section>
 
 <style>
