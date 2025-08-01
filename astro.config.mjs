@@ -12,5 +12,12 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        input: {
+          main: "./src/scripts/fullpage-init.ts",
+        },
+      },
+    },
   },
 });
