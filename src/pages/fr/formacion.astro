@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { IslaDinamicaFormacion } from "../../components/formacion/IslaDinamicaFormacion.jsx";
+import { IslaDinamicaFormacion } from "../../components/movil-view/formacion/IslaDinamicaFormacion.jsx";
 import i18next, { t, changeLanguage } from "i18next";
 
 changeLanguage("fr");
@@ -9,9 +9,10 @@ const currentLanguage = i18next.language;
 ---
 
 <Layout>
-    <p>{t("titles.formation")}</p>
+  <p>{t("titles.formation")}</p>
 
-    <IslaDinamicaFormacion currentLanguage={currentLanguage} client:only="react" />
-
+  <IslaDinamicaFormacion
+    currentLanguage={currentLanguage}
+    client:only="react"
+  />
 </Layout>
-

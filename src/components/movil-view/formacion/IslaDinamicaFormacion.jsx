@@ -1,6 +1,6 @@
 
 import { useState, useRef } from "react"
-import { getDatosFormacion } from '../../data/getData.js';
+import { getDatosFormacion } from '../../../data/getData.js';
 import './IslaDinamicaFormacion.css';
 
 export function IslaDinamicaFormacion({ currentLanguage }) {

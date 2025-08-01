@@ -1,11 +1,10 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "../components/movil-view/Header.astro";
 import Footer from "../components/Footer.astro";
 import Aside from "../components/Aside.astro";
 import { Pointer } from "@/components/magicui/pointer";
 import "../styles/global.css";
 import { t } from "i18next";
-import Inicio from "@/components/Inicio.astro";
 ---
 
 <!doctype html>
@@ -47,6 +46,31 @@ import Inicio from "@/components/Inicio.astro";
         <Footer />
       </div>
     </div>
+    <script>
+      // En tu página principal o en un script de redirección
+      function redirectBasedOnScreenSize() {
+        const screenWidth = window.innerWidth;
+        const currentPath = window.location.pathname;
+
+        if (screenWidth >= 769) {
+          // Escritorio
+          if (!currentPath.includes("laptop")) {
+            window.location.href = "/";
+          }
+        } else {
+          // Móviles y tablets
+          if (!currentPath.includes("movil")) {
+            window.location.href = "/movil-view";
+          }
+        }
+      }
+
+      // Ejecutar al cargar la página
+      window.addEventListener("load", redirectBasedOnScreenSize);
+
+      // Ejecutar al cambiar el tamaño de ventana
+      window.addEventListener("resize", redirectBasedOnScreenSize);
+    </script>
   </body>
 </html>
 

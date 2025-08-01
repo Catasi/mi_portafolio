@@ -1,0 +1,17 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../layouts/Layout_movil.astro";
+import Proyects from "@/components/movil-view/proyects.astro";
+import Conocimientos from "@/components/movil-view/conocimientos.astro";
+import Herramientas from "@/components/movil-view/herramientas.astro";
+import Formacion from "@/components/movil-view/formacion.astro";
+
+changeLanguage("en");
+---
+
+<Layout>
+  <Proyects />
+  <Conocimientos />
+  <Herramientas />
+  <Formacion />
+</Layout>
