@@ -98,12 +98,13 @@ portfolio/
 │   ├── pages/            # Páginas de Astro
 │   ├── layouts/          # Layouts base
 │   ├── styles/           # Estilos globales
-│   ├── utils/            # Utilidades y helpers
-│   ├── i18n/             # Configuración de traducciones
-│   │   ├── locales/      # Archivos de idiomas
-│   │   └── config.ts     # Configuración i18next
-│   └── assets/           # Imágenes y recursos
+│   ├── lib/              # Librerías y herramientas
+│   ├── data/             # Archivos con información sobre mí
+│   └── assets/           # Recursos
 ├── public/               # Archivos estáticos
+│   ├── img/              # Imágenes
+│   ├── locales/          # Archivos de idiomas
+│   └── video/            # Videos
 ├── astro.config.mjs      # Configuración de Astro
 ├── tailwind.config.mjs   # Configuración de Tailwind
 └── tsconfig.json         # Configuración de TypeScript
@@ -111,57 +112,48 @@ portfolio/
 
 ## 🎨 Secciones del Portfolio
 
-### 🏠 Hero Section
+### 🏠 Hello Section
 
 - Presentación personal con animaciones
-- Call-to-action para descargar CV
-- Navegación fluida entre secciones
 
 ### 👨‍💻 Sobre Mí
 
 - Información profesional y personal
-- Habilidades técnicas visualizadas
-- Experiencia y formación
+- Contacto por email
+- Botón con redirección página "sobre-mí"
 
 ### 💼 Proyectos
 
 - Showcase de proyectos destacados
-- Enlaces a repositorios y demos
 - Tecnologías utilizadas en cada proyecto
 
-### 🛠️ Habilidades
+### 🚀 Formación
 
-- Stack tecnológico organizado por categorías
-- Nivel de experiencia visual
-- Herramientas y metodologías
+- Mi formación profesional
+- Certificaciones en Tecnologías e Idiomas
 
-### 📞 Contacto
+### 👩‍💻 Programas
 
-- Formulario de contacto funcional
-- Enlaces a redes sociales profesionales
-- Información de contacto directo
+- Herramientas y Programas que manejo
+- Versiones más recientes
 
 ## 🌐 Internacionalización
 
 El sitio está disponible en:
 
-- 🇪🇸 **Español** (por defecto)
-- 🇺🇸 **English**
+- 🇪🇸 **Español**
+- 🇺🇸 **English** (por defecto)
+- FR **Français**
 
 ### Añadir nuevos idiomas:
 
-1. Crea archivo en `src/i18n/locales/[idioma].json`
-2. Actualiza la configuración en `src/i18n/config.ts`
+1. Crea archivo en `/locales/[idioma]/translation.json`
+2. Actualiza la configuración en la raiz del proyecto, en el archivo `astro-i18next.config.mjs`
 3. Añade el selector de idioma en el componente correspondiente
 
+Link al repositorio de astro-i18next: https://github.com/yassinedoghri/astro-i18next
+
 ## 🚀 Deployment
-
-### Automático con Vercel
-
-```bash
-# Conecta tu repositorio con Vercel
-# Deploy automático con cada push a main
-```
 
 ### Manual con build
 
@@ -203,16 +195,15 @@ Si encuentras algún error o tienes sugerencias:
 ## 📞 Contacto
 
 - 🌐 **Portfolio:** [tu-dominio.com](https://tu-dominio.com)
-- 📧 **Email:** tu-email@ejemplo.com
-- 💼 **LinkedIn:** [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- 🐙 **GitHub:** [Tu Usuario](https://github.com/tu-usuario)
-- 🐦 **Twitter:** [@tu_usuario](https://twitter.com/tu_usuario)
+- 📧 **Email:** aideecasillas14@gmail.com
+- 💼 **LinkedIn:** [Tu Perfil](https://www.linkedin.com/in/aideé-casillas-b952392b9)
+- 🐙 **GitHub:** [Tu Usuario](https://github.com/catasi)
 
 ## 📄 Licencia
 
 Este proyecto es de uso personal para demostrar habilidades profesionales.
 
-**© 2025 Tu Nombre. Todos los derechos reservados.**
+**© 2025 Catasi's Portfolio. All rights reserved.**
 
 ## 🙏 Agradecimientos
 
@@ -221,6 +212,7 @@ Este proyecto es de uso personal para demostrar habilidades profesionales.
 - **React Community** por los componentes reutilizables
 - **i18next** por facilitar la internacionalización
 - **MagicUI** por los componentes animados
+- **Ing. Fabian Yapura** por la orientación y el desarrollo del proyecto
 
 ---
 
