@@ -19,3 +19,29 @@ changeLanguage("fr");
   <Tools />
   <Footer />
 </Layout2>
+
+<script>
+  import "fullpage.js/dist/fullpage.css";
+  import fullpage from "fullpage.js";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new fullpage("#fullpage", {
+      sectionsColor: [],
+      anchors: [],
+      menu: "#menu",
+      slidesNavigation: true,
+      navigation: true,
+      navigationPosition: "left",
+      scrollOverflow: true,
+      scrollOverflowReset: true,
+      fitToSection: false,
+      autoScrolling: true,
+      responsiveSlides: true,
+      TouchSensitivity: 10,
+      continuousVertical: true,
+      continuousHorizontal: true,
+      responsiveHeight: 600,
+      fixedElements: "#header, #footer",
+    });
+  });
+</script>
