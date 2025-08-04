@@ -9,8 +9,8 @@ function redirectBasedOnScreenSize() {
     }
   } else {
     // Escritorio
-    if (currentPath.includes("movil")) {
-      window.location.href = "/";
+    if (currentPath.includes("movil-view")) {
+      window.location.replace("/");
     }
   }
 }
@@ -18,5 +18,5 @@ function redirectBasedOnScreenSize() {
 // Ejecutar al cargar la página
 window.addEventListener("load", redirectBasedOnScreenSize);
 
-// Ejecutar al cambiar el tamaño de ventana
-window.addEventListener("resize", redirectBasedOnScreenSize);
+  // Ejecutar al cambiar el tamaño de ventana
+  window.addEventListener("resize", redirectBasedOnScreenSize);
