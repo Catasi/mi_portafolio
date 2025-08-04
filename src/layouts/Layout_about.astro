@@ -1,0 +1,179 @@
+---
+import Header from "../components/movil-view/Header.astro";
+import Footer from "../components/Footer.astro";
+import Aside from "../components/Aside.astro";
+import { Pointer } from "@/components/magicui/pointer";
+import "../styles/global.css";
+import { t } from "i18next";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/icon-galaxy.png" />
+    <meta name="description" content={t("site.description")} />
+    <title>{t("site.title")}</title>
+  </head>
+  <body>
+    <video
+      src="/video/bg_galaxia2.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      class="w-full h-full object-cover fixed top-0"
+    >
+    </video>
+    <div>
+      <div class="relative w-full h-full min-h-screen">
+        <main>
+          <aside class="sticky top-4 left-0 w-full h-full">
+            <Aside />
+          </aside>
+          <section>
+            <div
+              class="overflow-y-auto h-full px-4 scroll-smooth scrollbar-thin scrollbar-thumb-sky-500 scrollbar-track-transparent"
+            >
+            <div class="flex justify-center items-center">
+                <h1 class="text-2xl text-center">Aideé Casillas</h1>
+                <a href="/" class="absolute right-28">
+                    <button class="px-4 py-2 bg-[#db750e] text-white rounded hover:bg-[#c7680b] animate-pulse transition flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                        </svg>
+                        <span>Regresar</span>
+                    </button>
+                </a>
+            </div> 
+            <slot />
+            </div>
+          </section>
+        </main>
+        <Pointer client:idle />
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html> 
+
+<style>
+  :root {
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  body {
+    color: white;
+    margin: 0;
+    /* background-image: url("/img/fondo.jpeg"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: var(--font-mono);
+  }
+  aside,
+  section {
+    background-color: #2e2b2b;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  aside {
+    align-content: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: max-content;
+  }
+
+  section {
+    flex: 1;
+    min-width: 0;
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 100px 20px 100px;
+  }
+
+  body {
+    --scrollbar-width: 5px;
+    --scrollbar-height: 10px;
+    --scrollbar-border-radius: 4px;
+    --scrollbar-border-thickness: 0px;
+    --show-double-buttons: none;
+    --scrollbar-thumb-color: #db750e;
+  }
+  body::-webkit-scrollbar-button {
+    background: var(--scrollbar-button-color, #3f3f46);
+    border: var(--scrollbar-border-thickness, 3px) solid
+      var(--scrollbar-border-color, rgb(255, 255, 255));
+    border-radius: var(--scrollbar-border-radius, 4px);
+  }
+  body::-webkit-scrollbar {
+    width: var(--scrollbar-width, 20px);
+    height: var(--scrollbar-height, 20px);
+  }
+  body::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color, #3b82f6);
+    border: var(--scrollbar-border-thickness, 3px) solid
+      var(--scrollbar-border-color, rgb(255, 255, 255));
+    border-radius: var(--scrollbar-border-radius, 4px);
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color, #a1a1aa);
+  }
+  body::-webkit-scrollbar-corner {
+    background: var(--scrollbar-corner-color, #ffffff);
+    border: var(--scrollbar-border-thickness, 3px) solid
+      var(--scrollbar-border-color, rgb(255, 255, 255));
+    border-radius: var(--scrollbar-border-radius, 4px);
+  }
+  body::-webkit-scrollbar-button:vertical:start:increment,
+  #preview::-webkit-scrollbar-button:vertical:end:decrement,
+  #preview::-webkit-scrollbar-button:horizontal:start:increment,
+  #preview::-webkit-scrollbar-button:horizontal:end:decrement {
+    display: var(--show-double-buttons, none);
+  }
+
+  @media (max-width: 1023px) {
+    main {
+      display: grid;
+    }
+
+    aside {
+      position: static;
+    }
+
+    aside {
+      width: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    main {
+      margin: 0;
+      padding: 10px 50px 10px 50px;
+    }
+  }
+
+  @media (max-width: 426px) {
+    main {
+      margin: 0;
+      padding: 10px 20px 10px 20px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    aside,
+    section {
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+</style>
