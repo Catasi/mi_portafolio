@@ -1,7 +1,44 @@
 const ruta = "/img/herramientas/";
 export const ProyectsEspanol = [
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/PIAC.png",
+    nombre:
+      "Rediseño del sitio web del Comité de la Industria Alemana para la Cultura (PIAC)",
+    area: ["Desarrollo Web", "Diseño Web"],
+    objetivo:
+      "Rediseñar el sitio web del PIAC, asegurando coherencia con su identidad visual e integrando herramientas web modernas para mejorar la experiencia del usuario.",
+    herramientas: [
+      {
+        nombre: "IDE",
+        herramienta: "Visual Studio Code v.1.79.2",
+        img: ruta + "vscode.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Node.js v.18.16.0",
+        img: ruta + "nodejs.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Astro v.4.5.3",
+        img: "/favicon.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "React v.19.1.0",
+        img: "/react.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "TailwindCSS v.4.1.4",
+        img: "/tailwindcss.svg",
+      },
+    ],
+    resultado:
+      "Diseño desplegado en el sitio web del PIAC: https://www.piac.org.mx",
+  },
+  {
+    img: "/img/proyects/appMedik.jpg",
     nombre: "AppMedik",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
@@ -94,25 +131,5 @@ export const ProyectsEspanol = [
       },
     ],
     resultado: "Monitoreo en tiempo real con recolección de datos.",
-  },
-  {
-    img: "/img/galaxia.jpeg",
-    nombre: "Formulario de Usuarios en Android (CRUD)",
-    area: ["Mobile App", "API REST", "Cloud Services"],
-    objetivo:
-      "Implementar un sistema CRUD para gestionar usuarios en dispositivos móviles.",
-    herramientas: [
-      {
-        nombre: "IDE",
-        herramienta: "Android Studio 2023.1.13",
-        img: ruta + "netbeans.png",
-      },
-      {
-        nombre: "Base de Datos",
-        herramienta: "SQLite 2.4.0",
-        img: ruta + "sqlite.png",
-      },
-    ],
-    resultado: "Aplicación móvil funcional con base de datos integrada.",
   },
 ];

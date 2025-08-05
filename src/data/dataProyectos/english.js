@@ -1,7 +1,43 @@
 const ruta = "/img/herramientas/";
 export const ProyectsIngles = [
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/PIAC.png",
+    nombre:
+      "Redising of the website of the Mexican Industrial Commission for Culture (PIAC)",
+    area: ["Web Development", "Web Design"],
+    objetivo:
+      "Redisign the PIAC website, ensuring visual consistency and integrating modern web tools to improve the user experience.",
+    herramientas: [
+      {
+        nombre: "IDE",
+        herramienta: "Visual Studio Code v.1.79.2",
+        img: ruta + "vscode.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Node.js v.18.16.0",
+        img: ruta + "nodejs.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Astro v.4.5.3",
+        img: "/favicon.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "React v.19.1.0",
+        img: "/react.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "TailwindCSS v.4.1.4",
+        img: "/tailwindcss.svg",
+      },
+    ],
+    resultado: "Design deployed on the PIAC website: https://www.piac.org.mx",
+  },
+  {
+    img: "/img/proyects/appMedik.jpg",
     nombre: "AppMedik",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
@@ -94,24 +130,5 @@ export const ProyectsIngles = [
       },
     ],
     resultado: "Real-time monitoring with data collection.",
-  },
-  {
-    img: "/img/galaxia.jpeg",
-    nombre: "User Form in Android (CRUD)",
-    area: ["Mobile App", "API REST", "Database"],
-    objetivo: "Implement a CRUD system to manage users on mobile devices.",
-    herramientas: [
-      {
-        nombre: "IDE",
-        herramienta: "Android Studio 2023.1.13",
-        img: ruta + "netbeans.png",
-      },
-      {
-        nombre: "Database",
-        herramienta: "SQLite 2.4.0",
-        img: ruta + "sqlite.png",
-      },
-    ],
-    resultado: "Functional mobile app with integrated database.",
   },
 ];
