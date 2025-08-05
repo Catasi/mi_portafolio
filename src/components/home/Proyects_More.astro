@@ -37,11 +37,19 @@ const proyectos = getProyectos(currentLanguage);
 
             <div class="flex flex-col md:flex-row gap-5 mt-5 items-center justify-center">
               <div class="w-full md:w-1/2">
-                <img
+                {proyecto.video ? (
+                  <video
+                    src={proyecto.video}
+                    controls
+                    class="w-full h-auto rounded-2xl"
+                    autoplay
+                    loop
+                  ></video>
+                ) : <img
                   src={proyecto.img}
                   alt={proyecto.nombre}
                   class="object-cover w-full h-auto rounded-2xl"
-                />
+                />}
               </div>
 
               <div class="w-full md:w-1/2">

@@ -1,8 +1,82 @@
 const ruta = "/img/herramientas/";
 export const ProyectsFrench = [
   {
-    img: "/img/galaxia.jpeg",
-    nombre: "AppMedik",
+    img: "/img/proyects/PIAC.png",
+    video: "/video/PIAC.mp4",
+    nombre:
+      "Présentation du site web de la Commission industrielle mexicaine pour la culture (PIAC)",
+    area: ["Web Development", "Web Design"],
+    objetivo:
+      "Renouveler le site web du PIAC, en assurant la cohérence visuelle et en intégrant des outils web modernes pour améliorer l’expérience utilisateur.",
+    herramientas: [
+      {
+        nombre: "IDE",
+        herramienta: "Visual Studio Code v.1.79.2",
+        img: ruta + "vscode.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Node.js v.18.16.0",
+        img: ruta + "nodejs.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Astro v.4.5.3",
+        img: "/favicon.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "React v.19.1.0",
+        img: "/react.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "TailwindCSS v.4.1.4",
+        img: "/tailwindcss.svg",
+      },
+    ],
+    resultado: "Design déployé sur le site web du PIAC : https://www.piac.org.mx",
+  },
+  {
+    img: "/img/proyects/IGECOCanada.png",
+    video: "/video/IgecoCanada.mp4",
+    nombre:
+      "Site web d’IGECO Canada",
+    area: ["Web Development", "Web Design"],
+    objetivo:
+      "Concevoir le site web d’IGECO Canada pour présenter ses services et projets et fournir des informations sur l’entreprise.",
+    herramientas: [
+      {
+        nombre: "IDE",
+        herramienta: "Visual Studio Code v.1.79.2",
+        img: ruta + "vscode.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Node.js v.18.16.0",
+        img: ruta + "nodejs.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Astro v.4.5.3",
+        img: "/favicon.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "React v.19.1.0",
+        img: "/react.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "TailwindCSS v.4.1.4",
+        img: "/tailwindcss.svg",
+      },
+    ],
+    resultado: "Design déployé sur le site web d’IGECO Canada: https://igecocanada.ca",
+  },
+  {
+    img: "/img/proyects/appMedik.jpg",
+    video: "/video/AppMedik.mp4",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
       "Développement d'une application médicale utilisant des technologies mobiles et des services cloud.",
@@ -31,7 +105,8 @@ export const ProyectsFrench = [
     resultado: "Version bêta de l'application",
   },
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/zarape_4.png",
+    video: "/video/ElZarape_CRUD_ligero.mp4",
     nombre: "API CRUD pour le Restaurant 'El Zarape'",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
@@ -66,7 +141,7 @@ export const ProyectsFrench = [
     resultado: "API REST pour gérer les données dans une base de données.",
   },
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/DAQ_System.png",
     nombre: "Système DAQ pour la Surveillance des Capteurs",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:

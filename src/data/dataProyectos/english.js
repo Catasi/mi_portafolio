@@ -2,6 +2,7 @@ const ruta = "/img/herramientas/";
 export const ProyectsIngles = [
   {
     img: "/img/proyects/PIAC.png",
+    video: "/video/PIAC.mp4",
     nombre:
       "Redising of the website of the Mexican Industrial Commission for Culture (PIAC)",
     area: ["Web Development", "Web Design"],
@@ -37,7 +38,45 @@ export const ProyectsIngles = [
     resultado: "Design deployed on the PIAC website: https://www.piac.org.mx",
   },
   {
+    img: "/img/proyects/IGECOCanada.png",
+    video: "/video/IgecoCanada.mp4",
+    nombre:
+      "IGECO Canada website",
+    area: ["Web Development", "Web Design"],
+    objetivo:
+      "Design the IGECO Canada website to showcase their services and projects and providing information about the company.",
+    herramientas: [
+      {
+        nombre: "IDE",
+        herramienta: "Visual Studio Code v.1.79.2",
+        img: ruta + "vscode.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Node.js v.18.16.0",
+        img: ruta + "nodejs.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Astro v.4.5.3",
+        img: "/favicon.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "React v.19.1.0",
+        img: "/react.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "TailwindCSS v.4.1.4",
+        img: "/tailwindcss.svg",
+      },
+    ],
+    resultado: "Design deployed on the IGECO Canada website: https://igecocanada.ca",
+  },
+  {
     img: "/img/proyects/appMedik.jpg",
+    video: "/video/AppMedik.mp4",
     nombre: "AppMedik",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
@@ -67,7 +106,8 @@ export const ProyectsIngles = [
     resultado: "Beta version of the application",
   },
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/zarape_4.png",
+    video: "/video/ElZarape_CRUD_ligero.mp4",
     nombre: "API CRUD for Restaurant 'El Zarape'",
     area: ["Web Services", "API REST", "Database"],
     objetivo:
@@ -102,7 +142,7 @@ export const ProyectsIngles = [
     resultado: "REST API for managing data in a database.",
   },
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/DAQ_System.png",
     nombre: "DAQ System for Sensor Monitoring",
     area: ["IoT", "Real-time Monitoring"],
     objetivo:

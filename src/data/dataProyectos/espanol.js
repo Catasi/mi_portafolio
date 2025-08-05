@@ -2,6 +2,7 @@ const ruta = "/img/herramientas/";
 export const ProyectsEspanol = [
   {
     img: "/img/proyects/PIAC.png",
+    video: "/video/PIAC.mp4",
     nombre:
       "Rediseño del sitio web del Comité de la Industria Alemana para la Cultura (PIAC)",
     area: ["Desarrollo Web", "Diseño Web"],
@@ -38,7 +39,45 @@ export const ProyectsEspanol = [
       "Diseño desplegado en el sitio web del PIAC: https://www.piac.org.mx",
   },
   {
+    img: "/img/proyects/IGECOCanada.png",
+    video: "/video/IgecoCanada.mp4",
+    nombre:
+      "Sitio web IGECO Canada",
+    area: ["Web Development", "Web Design"],
+    objetivo:
+      "Diseñar el sitio web de IGECO Canadá para mostrar sus servicios y proyectos y proporcionar información sobre la empresa.",
+    herramientas: [
+      {
+        nombre: "IDE",
+        herramienta: "Visual Studio Code v.1.79.2",
+        img: ruta + "vscode.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Node.js v.18.16.0",
+        img: ruta + "nodejs.png",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "Astro v.4.5.3",
+        img: "/favicon.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "React v.19.1.0",
+        img: "/react.svg",
+      },
+      {
+        nombre: "Framework",
+        herramienta: "TailwindCSS v.4.1.4",
+        img: "/tailwindcss.svg",
+      },
+    ],
+    resultado: "Diseño despleado en el sitio web: https://igecocanada.ca",
+  },
+  {
     img: "/img/proyects/appMedik.jpg",
+    video: "/video/AppMedik.mp4",
     nombre: "AppMedik",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
@@ -68,7 +107,8 @@ export const ProyectsEspanol = [
     resultado: "Aplicación Beta",
   },
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/zarape_4.png",
+    video: "/video/ElZarape_CRUD_ligero.mp4",
     nombre: "API CRUD para Restaurante “El Zarape”",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
@@ -103,7 +143,7 @@ export const ProyectsEspanol = [
     resultado: "API REST para gestionar datos en una base de datos.",
   },
   {
-    img: "/img/galaxia.jpeg",
+    img: "/img/proyects/DAQ_System.png",
     nombre: "Sistema DAQ para Monitoreo de Sensores",
     area: ["Mobile App", "API REST", "Cloud Services"],
     objetivo:
