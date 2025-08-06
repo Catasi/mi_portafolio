@@ -44,5 +44,14 @@
         "l6" : "Planification",
         "l7" : "Communication",
         "l8" : "Leadership"
+    },
+    "inicio": {
+        "welcome": "Bienvenue à mon Portafolio",
+        "scroll": "Faites défiler vers le bas pour voir mon portfolio"
+    },
+    "about-me": {
+        "title": "Je suis Aideé Casillas, un développeur logiciel junior 100% mexicain",
+        "description": "Je suis actuellement étudiant en ingénierie du développement logiciel multiplateforme à l’Université technologique de Léon. Je combine ma passion pour la technologie avec ma créativité pour créer des applications qui résolvent de vrais problèmes. Cela me motive à apprendre constamment et à collaborer sur des projets qui génèrent un impact.",
+        "button": "En savoir plus sur moi"
     }
 }

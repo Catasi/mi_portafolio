@@ -44,5 +44,14 @@
         "l6": "Planificación",
         "l7": "Comunicación",
         "l8": "Liderazgo"
+    },
+    "inicio": {
+        "welcome": "Bienvenido a mi Portafolio",
+        "scroll": "Scrollea hacia abajo para ver mi portafolio"
+    },
+    "about-me": {
+        "title": "Soy Aidee Casillas, una Desarrolladora de Software Junior 100% Mexicana",
+        "description": "Actualmente soy estudiante en ingeniería de desarrollo de software multiplataforma en la Universidad Tecnológica de Léon. Combino mi pasión por la tecnología con mi creatividad para construir aplicaciones que resuelvan problemas reales. Me motiva aprender constantemente y colaborar en proyectos que generen impacto.",
+        "button": "Conoce más sobre mí"
     }
 }

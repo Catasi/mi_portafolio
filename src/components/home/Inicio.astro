@@ -1,7 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
-
-changeLanguage("en");
+import { t } from "i18next";
 
 import { IconCloud } from "@/components/magicui/icon-cloud";
 import { images } from "../../data/dataImg.js";
@@ -40,11 +38,13 @@ const config = {
     <div class="flex-1 anton-regular">
       <div class="flex flex-col justify-center items-center min-h-screen">
         <div>
-          <h1 class="text-white text-[120px] font-bold mb-25 text-shadow-lg/50">
-            BIENVENIDX A MI PORTAFOLIO
+          <h1
+            class="text-white text-[120px] font-bold mb-25 text-shadow-lg/50 uppercase"
+          >
+            {t("inicio.welcome")}
           </h1>
           <p class="text-white text-center text-2xl mt-4">
-            Scrollea hacia abajo para ver mi portafolio
+            {t("inicio.scroll")}
           </p>
         </div>
         <div class="flex justify-center items-center mt-10">

@@ -1,5 +1,5 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
+import i18next from "i18next";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import MoreInfo from "./MoreInfo.jsx";
 import { getProyectos } from "../../data/getData.js";
@@ -11,7 +11,7 @@ const proyectos = getProyectos(currentLanguage);
 <section class="section">
   <div class="absolute top-0 left-1/2 -translate-x-1/2">
     <h2 class="text-7xl text-center mt-10">
-      <LineShadowText shadowColor={"white"} client:load content="PROYECTOS" />
+      <LineShadowText shadowColor={"white"} client:load content="PROYECTS" />
     </h2>
   </div>
   {
@@ -44,12 +44,14 @@ const proyectos = getProyectos(currentLanguage);
                     class="w-full h-auto rounded-2xl"
                     autoplay
                     loop
-                  ></video>
-                ) : <img
-                  src={proyecto.img}
-                  alt={proyecto.nombre}
-                  class="object-cover w-full h-auto rounded-2xl"
-                />}
+                  />
+                ) : (
+                  <img
+                    src={proyecto.img}
+                    alt={proyecto.nombre}
+                    class="object-cover w-full h-auto rounded-2xl"
+                  />
+                )}
               </div>
 
               <div class="w-full md:w-1/2">

@@ -44,5 +44,14 @@
         "l6": "Planing",
         "l7": "Communication",
         "l8": "Lidership"
+    },
+    "inicio": {
+        "welcome": "Welcome to my Portafolio",
+        "scroll": "Scroll down to see my portfolio"
+    },
+    "about-me": {
+        "title": "I'm Aideé Casillas, a Junior Software Developer 100% Mexican",
+        "description": "I am currently a student in cross-platform software development engineering at the Technological University of Léon. I combine my passion for technology with my creativity to build apps that solve real problems. It motivates me to constantly learn and collaborate on projects that generate impact.",
+        "button": "Know more about me"
     }
 }
