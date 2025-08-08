@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+#clave acceso servidor AWS
+portfolio_cata.pem
