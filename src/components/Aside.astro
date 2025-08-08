@@ -1,141 +1,131 @@
 ---
-import { datosAside } from '../data/datosAside.js';
-import i18next, {t} from 'i18next';
+import { datosAside } from "../data/datosAside.js";
+import i18next, { t } from "i18next";
 
 const lang = i18next.language;
-const base = i18next.language === 'en' ? '' :  `/${lang}`
-
+const base = i18next.language === "en" ? "" : `/${lang}`;
 ---
 
 <div class="flex flex-col items-center text-center gap-y-4">
   <div class="text-center">
     <h1 class="text-2xl mb-2">CATASI 💫</h1>
-    <img src="/img/katia.jpg" alt="Gato_negro" class="img-fluid mx-auto w-[150px] h-[150px] rounded-[90%] object-cover">
+    <img
+      src="/img/katia.jpg"
+      alt="Gato_negro"
+      class="img-fluid mx-auto w-[150px] h-[150px] rounded-[90%] object-cover"
+    />
     <h2 class="text-xl text-(--primary-color) mt-2">{t("aside.h3")}</h2>
     <p class="mt-0">{t("aside.description")}</p>
-  </div>  
-  <div class="contenedor-informacion">
-    {datosAside.map((dato) => (  
-      <div class="informacion flex flex-row items-center gap-x-4 mt-4">
-          <img src={dato.icono} alt={dato.icono} class="w-12 h-12 rounded-full object-cover">
-          <div class="flex flex-col">
-            {lang === "en" ? (
-              <strong class="info">{dato.info_en}</strong>
-              <span class="descripcion">{dato.descripcion}</span>
-            ) : (lang === "fr" ? (
-              <strong class="info">{dato.info_fr}</strong>
-              <span class="descripcion">{dato.descripcion}</span>
-            ) : (
-              <strong class="info">{dato.info_es}</strong>
-              <span class="descripcion">{dato.descripcion}</span>
-            ))}
-          </div>
-      </div>
-      ))}
-      <button class="bg-[#db750e] text-white self-center mt-4 p-2.5 border-none text-base rounded-[10px] transition-transform duration-300 ease-in-out hover:scale-110">
-        {lang === "en" ? (
-          <a href="/src/assets/CV_AideéCasillas_en.pdf" download="CV_AideéCasillas.pdf">
-            {t("aside.buttonCV")}
-          </a>
-        ) : (lang === "fr" ? (
-          <a href="/src/assets/CV_AideéCasillas_fr.pdf" download="CV_AideéCasillas.pdf">
-            {t("aside.buttonCV")}
-          </a>
-        ) : (
-          <a href="/src/assets/CV_AideéCasillas.pdf" download="CV_AideéCasillas.pdf">
-            {t("aside.buttonCV")}
-          </a>
-          ))
-        } 
-      </button>
   </div>
-  
+  <div class="contenedor-info">
+    {
+      datosAside.map((dato) => (
+        <div class="informacion flex flex-row items-center gap-x-4 mt-4">
+          <img
+            src={dato.icono}
+            alt={dato.icono}
+            class="w-12 h-12 rounded-full object-cover"
+          />
+          <div class="flex flex-col items-start">
+            {lang === "en" ? (
+              <>
+                <strong>{dato.info_en}</strong>
+                <span>{dato.descripcion}</span>
+              </>
+            ) : lang === "fr" ? (
+              <>
+                <strong>{dato.info_fr}</strong>
+                <span>{dato.descripcion}</span>
+              </>
+            ) : (
+              <>
+                <strong>{dato.info_es}</strong>
+                <span>{dato.descripcion}</span>
+              </>
+            )}
+          </div>
+        </div>
+      ))
+    }
+    {
+      lang === "en" ? (
+        <a
+          href="/src/assets/CV_AideéCasillas_en.pdf"
+          download="CV_AideéCasillas.pdf"
+          class="bg-[#db750e] text-white self-center mt-4 p-2.5 border-none text-base rounded-[10px] transition-transform duration-300 ease-in-out hover:scale-110 text-center inline-block"
+        >
+          {t("aside.buttonCV")}
+        </a>
+      ) : lang === "fr" ? (
+        <a
+          href="/src/assets/CV_AideéCasillas_fr.pdf"
+          download="CV_AideéCasillas.pdf"
+          class="bg-[#db750e] text-white self-center mt-4 p-2.5 border-none text-base rounded-[10px] transition-transform duration-300 ease-in-out hover:scale-110 text-center inline-block"
+        >
+          {t("aside.buttonCV")}
+        </a>
+      ) : (
+        <a
+          href="/src/assets/CV_AideéCasillas.pdf"
+          download="CV_AideéCasillas.pdf"
+          class="bg-[#db750e] text-white self-center mt-4 p-2.5 border-none text-base rounded-[10px] transition-transform duration-300 ease-in-out hover:scale-110 text-center inline-block"
+        >
+          {t("aside.buttonCV")}
+        </a>
+      )
+    }
+  </div>
 </div>
 
 <style>
-    {/* :root {
-      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-    }
+  button:hover {
+    transform: scale(1.1);
+  }
 
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .contenedor-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .informacion {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 14px;
+  }
+
+  .informacion img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .aside-container {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  @media (max-width: 426px) {
     .aside-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1rem;
-    } 
-
-    p{
-      margin-top: 0;
     }
-    img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 90%;
+  }
+
+  @media (max-width: 320px) {
+    .aside-container {
+      padding: 10px 0;
     }
-
-    button {
-        background-color: #db750e;
-        color: #fff;
-        align-self: center;
-        margin-top: 1rem;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 10px;
-        font-size: 1rem;
-        transition: transform 0.3s ease;
-    }*/
-
-    button:hover {
-        transform: scale(1.1);
-    }
-
-    a{
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .contenedor-info {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; 
-    }
-
-    .informacion {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-top: 1rem;
-      font-size: 14px;
-    }
-
-    .informacion img{
-      width: 30px;
-      height: 30px;
-      object-fit: cover;
-    }
-
-    @media ( max-width: 768px) {
-      .aside-container {
-        display: flex;
-        flex-direction: row;
-      }
-    }
-
-    @media (max-width: 426px){
-      .aside-container {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 320px) {
-      .aside-container {
-        padding: 10px 0;
-      }
-    }
-
+  }
 </style>
