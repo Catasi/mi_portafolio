@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout_about.astro";
 import Conocimientos from "@/components/movil-view/conocimientos.astro";
 
@@ -7,9 +7,11 @@ changeLanguage("es");
 ---
 
 <Layout>
-    <div class="text-justify mt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla libero justo, malesuada eu mauris non, consectetur dignissim lorem. In eget ipsum quis tortor congue imperdiet sit amet et neque. Vivamus mattis, neque porta tristique mattis, eros felis ullamcorper sapien, non consectetur nisi urna eu tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ut sapien ex. Cras a fermentum lectus. Nulla tempus leo nisl, in auctor metus congue non. Nulla auctor, justo quis dignissim consequat, est sapien sagittis nisl, vitae porta mi lorem tincidunt nulla. Nunc imperdiet bibendum enim, a ultricies felis tincidunt a. Praesent id dolor eu nulla auctor semper. Curabitur accumsan consequat est scelerisque posuere.<br /><br />
-        Maecenas tincidunt ut nisl ac sodales. Integer sit amet placerat elit. Pellentesque quis lorem enim. Ut vel neque gravida, dignissim justo et, placerat elit. Vestibulum eget mauris urna. Pellentesque viverra blandit varius. Donec aliquam euismod ornare.<br><br />
-    </div>
-    <Conocimientos />
+  <div class="space-y-8 max-w-4xl mx-auto mt-4 text-justify">
+    <div set:html={t("about-me.p1")} />
+    <div set:html={t("about-me.p2")} />
+    <div set:html={t("about-me.p3")} />
+  </div>
+
+  <Conocimientos />
 </Layout>

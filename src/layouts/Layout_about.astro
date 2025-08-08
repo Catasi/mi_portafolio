@@ -29,25 +29,37 @@ import { t } from "i18next";
     <div>
       <div class="relative w-full h-full min-h-screen">
         <main>
-          <aside class="sticky top-4no left-0 w-full h-full">
+          <aside class="sticky top-4 left-0 w-full h-full">
             <Aside />
           </aside>
           <section>
             <div
               class="overflow-y-auto h-full px-4 scroll-smooth scrollbar-thin scrollbar-thumb-sky-500 scrollbar-track-transparent"
             >
-            <div class="flex justify-center items-center">
+              <div class="flex justify-center items-center">
                 <h1 class="text-2xl text-center">Aideé Casillas</h1>
                 <a href="/" class="absolute right-28">
-                    <button class="px-4 py-2 bg-[#db750e] text-white rounded hover:bg-[#c7680b] animate-pulse transition flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                        </svg>
-                        <span>Regresar</span>
-                    </button>
+                  <button
+                    class="px-4 py-2 bg-[#db750e] text-white rounded hover:bg-[#c7680b] animate-pulse transition flex items-center gap-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                    </svg>
+                    <span>Regresar</span>
+                  </button>
                 </a>
-            </div> 
-            <slot />
+              </div>
+              <slot />
             </div>
           </section>
         </main>
@@ -56,7 +68,7 @@ import { t } from "i18next";
       </div>
     </div>
   </body>
-</html> 
+</html>
 
 <style>
   :root {
