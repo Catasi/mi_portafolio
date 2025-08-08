@@ -46,31 +46,7 @@ import { t } from "i18next";
         <Footer />
       </div>
     </div>
-    <script>
-      // En tu página principal o en un script de redirección
-      function redirectBasedOnScreenSize() {
-        const screenWidth = window.innerWidth;
-        const currentPath = window.location.pathname;
-
-        if (screenWidth >= 769) {
-          // Escritorio
-          if (!currentPath.includes("laptop")) {
-            window.location.href = "/";
-          }
-        } else {
-          // Móviles y tablets
-          if (!currentPath.includes("movil")) {
-            window.location.href = "/movil-view";
-          }
-        }
-      }
-
-      // Ejecutar al cargar la página
-      window.addEventListener("load", redirectBasedOnScreenSize);
-
-      // Ejecutar al cambiar el tamaño de ventana
-      window.addEventListener("resize", redirectBasedOnScreenSize);
-    </script>
+    <script type="module" src="/scripts/redirect.js" defer></script>
   </body>
 </html>
 

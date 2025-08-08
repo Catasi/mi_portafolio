@@ -30,7 +30,6 @@ import { t } from "i18next";
     <main id="fullpage">
       <slot />
     </main>
-    <script type="module" src="/src/scripts/fullpage-init.ts"></script>
     <!-- fullPage.js JS -->
     <script
       type="module"
@@ -41,10 +40,36 @@ import { t } from "i18next";
       type="module"
       src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"
     ></script>
-    <!-- jQuery -->
-    <script type="module" src="https://code.jquery.com/jquery-3.7.1.min.js"
-    ></script>
-    <script type="module" src="/src/scripts/redirect.js"></script>
+    <script type="module" src="/scripts/redirect.js" defer></script>
+    <script is:inline>
+      function initFullPage() {
+        if (
+          typeof fullpage !== "undefined" &&
+          document.querySelector("#fullpage")
+        ) {
+          new fullpage("#fullpage", {
+            sectionsColor: [],
+            anchors: [],
+            menu: "#menu",
+            slidesNavigation: true,
+            navigation: true,
+            navigationPosition: "left",
+            scrollOverflow: true,
+            scrollOverflowReset: true,
+            fitToSection: false,
+            autoScrolling: true,
+            responsiveSlides: true,
+            TouchSensitivity: 10,
+            continuousVertical: true,
+            continuousHorizontal: true,
+            responsiveHeight: 600,
+            fixedElements: "#header, #footer",
+          });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", initFullPage);
+    </script>
   </body>
 </html>
 
